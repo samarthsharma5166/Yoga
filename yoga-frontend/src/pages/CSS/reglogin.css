@@ -1,0 +1,155 @@
+/* --- Form Containers --- */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Full viewport height */
+  background: linear-gradient(
+    135deg,
+    #e0f7fa 0%,
+    #b2ebf2 100%
+  ); /* Soft blue gradient background */
+  padding: 20px;
+  box-sizing: border-box; /* Include padding in element's total width and height */
+}
+
+.auth-form {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  width: 100%;
+  max-width: 450px; /* Max width for larger screens */
+  text-align: center;
+  animation: fadeInScale 0.6s ease-out; /* Main form animation */
+}
+
+/* --- Headings --- */
+.auth-form h2 {
+  font-size: 2.2rem;
+  color: #2e7d32; /* Deep green for a natural feel */
+  margin-bottom: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  position: relative;
+}
+
+.auth-form h2::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: #4caf50; /* Matching green underline */
+  border-radius: 5px;
+}
+
+/* --- Input Fields --- */
+.auth-form input {
+  width: calc(100% - 20px); /* Account for padding */
+  padding: 14px 10px;
+  margin: 15px 0;
+  border: 1px solid #b2dfdb; /* Light teal border */
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-family: "Segoe UI", sans-serif;
+  transition: all 0.3s ease; /* Smooth transitions for focus */
+  outline: none; /* Remove default outline */
+}
+
+.auth-form input::placeholder {
+  color: #90a4ae; /* Muted placeholder text */
+}
+
+.auth-form input:focus {
+  border-color: #4db6ac; /* Darker teal on focus */
+  box-shadow: 0 0 8px rgba(77, 182, 172, 0.4); /* Gentle glow on focus */
+  transform: translateY(-2px); /* Slight lift on focus */
+}
+
+/* --- Buttons --- */
+.auth-form button {
+  width: 100%;
+  padding: 15px;
+  margin-top: 25px;
+  background-color: #66bb6a; /* Vibrant green button */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth hover effects */
+  box-shadow: 0 4px 15px rgba(102, 187, 106, 0.4); /* Shadow for button */
+}
+
+.auth-form button:hover {
+  background-color: #43a047; /* Darker green on hover */
+  transform: translateY(-3px); /* Lift button on hover */
+  box-shadow: 0 6px 20px rgba(102, 187, 106, 0.6); /* Enhanced shadow on hover */
+}
+
+.auth-form button:active {
+  transform: translateY(0); /* Press effect */
+  box-shadow: 0 2px 10px rgba(102, 187, 106, 0.3);
+}
+
+/* --- Messages (e.g., alert messages) --- */
+.auth-form .message {
+  margin-top: 20px;
+  font-size: 1rem;
+  color: #388e3c; /* Success message color */
+  font-weight: 500;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.auth-form .error-message {
+  color: #d32f2f; /* Error message color */
+}
+
+/* --- Animations --- */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 600px) {
+  .auth-form {
+    padding: 30px 20px;
+    border-radius: 10px;
+  }
+
+  .auth-form h2 {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+  }
+
+  .auth-form input {
+    padding: 12px 10px;
+    font-size: 1rem;
+  }
+
+  .auth-form button {
+    padding: 13px;
+    font-size: 1.1rem;
+  }
+}

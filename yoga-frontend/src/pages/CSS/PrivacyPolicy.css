@@ -1,0 +1,47 @@
+/* PrivacyTerms.css */
+.legal-container {
+  padding: 60px 8%;
+  background: #f9f9f9;
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  color: #333;
+  line-height: 1.7;
+}
+
+.legal-container h1 {
+  font-size: 34px;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #2d3436;
+  font-weight: 700;
+}
+
+.legal-container p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.legal-section {
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px;
+  margin: 20px 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+}
+
+.legal-section h3 {
+  font-size: 20px;
+  color: #27ae60;
+  margin-bottom: 10px;
+}
+
+.legal-section ul {
+  padding-left: 20px;
+  list-style: disc;
+}
+
+.legal-section li {
+  margin-bottom: 8px;
+  font-size: 15px;
+}

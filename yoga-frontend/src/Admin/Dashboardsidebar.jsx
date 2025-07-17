@@ -1,0 +1,77 @@
+import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
+import Box from "@mui/material/Box";
+import Drawer from "@mui/material/Drawer";
+import List from "@mui/material/List";
+import SidebarItem from "./Sidebaritem";
+
+const drawerWidth = 300;
+
+export default function DashboardSidebar({ menuItems, open, setOpen }) {
+  const location = useLocation();
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const drawerContent = (
+    <List>
+      {menuItems.map((item) => (
+        <SidebarItem
+          key={item.name}
+          name={item.name}
+          icon={item.icon}
+          path={item.path}
+          active={location.pathname === item.path}
+          handleClick={isMobile ? () => setOpen(false) : null}
+        />
+      ))}
+    </List>
+  );
+
+  return (
+    <>
+      {/* Permanent drawer for md+ screens */}
+      <Box sx={{ display: { xs: "none", md: "block" } }}>
+        <Drawer
+          variant="permanent"
+          sx={{
+            width: drawerWidth,
+            flexShrink: 0,
+            "& .MuiDrawer-paper": {
+              width: drawerWidth,
+              marginTop: "84px",
+              height: "calc(100% - 84px)",
+              borderRight: "none",
+            },
+          }}
+          open
+        >
+          {drawerContent}
+        </Drawer>
+      </Box>
+
+      {/* Temporary drawer for mobile */}
+      <Drawer
+        variant="temporary"
+        anchor="left"
+        open={open}
+        onClose={() => setOpen(false)}
+        ModalProps={{ keepMounted: true }}
+        sx={{
+          display: { xs: "block", md: "none" },
+          "& .MuiDrawer-paper": {
+            width: drawerWidth,
+            paddingTop: "92px",
+            overflowY: "auto",
+          },
+        }}
+      >
+        {drawerContent}
+      </Drawer>
+    </>
+  );
+}

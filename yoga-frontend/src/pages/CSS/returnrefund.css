@@ -1,0 +1,63 @@
+.policy-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #fefefe;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.policy-title {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  border-left: 5px solid #007bff;
+  padding-left: 12px;
+}
+
+.company-name {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+h3 {
+  color: #007bff;
+  margin-top: 25px;
+}
+
+p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+ul {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+ul li {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.disclaimer {
+  font-size: 0.95rem;
+  color: #777;
+  border-top: 1px solid #ccc;
+  padding-top: 15px;
+  margin-top: 25px;
+}
+
+@media screen and (max-width: 768px) {
+  .policy-container {
+    padding: 20px;
+  }
+
+  .policy-title {
+    font-size: 1.6rem;
+  }
+}

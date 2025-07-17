@@ -1,0 +1,64 @@
+.mental-wellness-container {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 30px 20px;
+  background: #f0f9ff;
+  border-radius: 16px;
+  font-family: "Segoe UI", sans-serif;
+  text-align: center;
+  animation: fadeIn 1s ease;
+}
+
+.mental-heading {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.mental-subtext {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.mental-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.mental-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mental-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.mental-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #1e88e5;
+}
+
+.mental-card p {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,128 @@
+/* Physical.css */
+
+.physical-container {
+  padding: 60px 6%;
+  background: linear-gradient(to right, #e0f7ec, #f6fff9);
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  animation: fadeIn 0.6s ease;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Heading */
+.physical-container h1 {
+  text-align: center;
+  font-size: 36px;
+  color: #1b5e20;
+  margin-bottom: 20px;
+  font-weight: 700;
+  position: relative;
+}
+
+.physical-container h1::after {
+  content: '';
+  display: block;
+  width: 70px;
+  height: 3px;
+  background-color: #43a047;
+  margin: 12px auto 30px;
+  border-radius: 4px;
+}
+
+/* Description Text */
+.physical-container p {
+  text-align: center;
+  font-size: 16.5px;
+  color: #2e7d32;
+  max-width: 680px;
+  margin: 0 auto 40px auto;
+  line-height: 1.6;
+}
+
+/* Grid */
+.physical-sections {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+}
+
+/* Card Box */
+.physical-card {
+  width: 280px;
+  height: 220px;
+  background: linear-gradient(to top, #ffffff, #e8f5e9);
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 12px 24px rgba(60, 179, 113, 0.15);
+  position: relative;
+  perspective: 1000px;
+  transition: transform 0.4s ease, box-shadow 0.3s ease;
+}
+
+.physical-card:hover {
+  transform: scale(1.04);
+  box-shadow: 0 16px 32px rgba(34, 139, 34, 0.2);
+}
+
+/* Emoji Icon */
+.physical-card::before {
+  content: '🧘‍♂️';
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  font-size: 32px;
+  opacity: 0.1;
+  transform: rotate(-15deg);
+}
+
+/* Card Heading */
+.physical-card h3 {
+  font-size: 21px;
+  color: #2e7d32;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+/* Card Text */
+.physical-card p {
+  font-size: 15px;
+  color: #4e5d52;
+  line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .physical-container {
+    padding: 30px 15px;
+  }
+
+  .physical-card {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+  }
+
+  .physical-container h1 {
+    font-size: 28px;
+  }
+
+  .physical-card h3 {
+    font-size: 18px;
+  }
+
+  .physical-card p {
+    font-size: 14px;
+  }
+}
