@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { registerUser } from "../services/api";
-import { Link } from "react-router-dom"; // ✅ Link import kiya
+import { Link, useSearchParams } from "react-router-dom"; // ✅ Link import kiya
 // import "../pages/CSS/relogin.css"
 
  function Register() {
@@ -10,12 +10,15 @@ import { Link } from "react-router-dom"; // ✅ Link import kiya
     password: "",
     referred_by: "", // referral code (if any)
   });
+  const [searchParams] = useSearchParams();
+
+  // const data = searchParams.get("ref");
 
   useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const ref = params.get("ref");
+    // const params = new URLSearchParams(window.location.search);
+    const ref = searchParams.get("ref");
     if (ref) {
-      setForm((prev) => ({ ...prev, referred_by: ref }));
+      setForm((prev) => ({ ...prev, referred_by: ref ? ref : null }));
     }
   }, []);
 

@@ -3,9 +3,7 @@ import React, { useState } from "react";
 import CountUp from "react-countup";
 import "./CSS/userdashboard.css"; // Link external CSS
 
-
 import Referral from "../Admin/Referral";
-
 
 const Dashboard = () => {
   const [stats, setStats] = useState({
@@ -34,7 +32,7 @@ const Dashboard = () => {
             strokeDasharray={dashArray}
             strokeDashoffset={dashOffset}
             strokeLinecap="square"
-            transform={`rotate(${rotate} 25 25)`} 
+            transform={`rotate(${rotate} 25 25)`}
             className="stat-circle"
           />
         </svg>
@@ -53,10 +51,34 @@ const Dashboard = () => {
       <h2 style={{ marginBottom: "1rem" }}>Welcome, {user.name}</h2>
 
       <div className="dashboard-grid">
-        <StatCard label="Total Users" value={stats.counselors} dashArray="100.96" dashOffset="90.635" rotate="0" />
-        <StatCard label="Total Classes" value={stats.students} dashArray="100.52" dashOffset="30.84" rotate="385" />
-        <StatCard label="Payment Status" value={stats.sessions} dashArray="110.52" dashOffset="65.31" rotate="10" />
-        <StatCard label="Referral Status" value={stats.complaints} dashArray="122.52" dashOffset="121.42" rotate="10" />
+        <StatCard
+          label="Total Users"
+          value={stats.counselors}
+          dashArray="100.96"
+          dashOffset="90.635"
+          rotate="0"
+        />
+        <StatCard
+          label="Total Classes"
+          value={stats.students}
+          dashArray="100.52"
+          dashOffset="30.84"
+          rotate="385"
+        />
+        <StatCard
+          label="Payment Status"
+          value={stats.sessions}
+          dashArray="110.52"
+          dashOffset="65.31"
+          rotate="10"
+        />
+        <StatCard
+          label="Referral Status"
+          value={stats.complaints}
+          dashArray="122.52"
+          dashOffset="121.42"
+          rotate="10"
+        />
       </div>
 
       {/* ✅ Referral block added here */}

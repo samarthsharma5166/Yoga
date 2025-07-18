@@ -8,7 +8,14 @@ import {
 
 export const getAdminStats = async (req, res) => {
   try {
-    const [counselors, students, sessions, complaints] = await Promise.all([
+    // const [counselors, students, sessions, complaints] = await Promise.all([
+    //   countUsers(),
+    //   countClasses(),
+    //   // countPayments(),
+    //   countReferrals(),
+    // ]);
+
+    const [counselors, students, complaints] = await Promise.all([
       countUsers(),
       countClasses(),
       // countPayments(),

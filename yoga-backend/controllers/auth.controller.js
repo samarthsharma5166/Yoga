@@ -21,9 +21,22 @@ export const register = async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, 10);
     const referral_code = name.toLowerCase().replace(/\s+/g, '') + Math.floor(Math.random() * 10000);
 
+    let safeReferrer = referred_by;
+    if (!referred_by || referred_by === "null" || referred_by === "") {
+      safeReferrer = null;
+    }
+
     const [result] = await db.execute(
       "INSERT INTO users (name, email, password, role, referral_code, referred_by, referral_count) VALUES (?, ?, ?, ?, ?, ?, ?)",
-      [name, email, hashedPassword, "user", referral_code, referred_by || null, 0]
+      [
+        name,
+        email,
+        hashedPassword,
+        "user",
+        referral_code,
+        safeReferrer,
+        0,
+      ]
     );
 
     if (referred_by) {

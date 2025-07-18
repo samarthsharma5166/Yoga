@@ -31,7 +31,7 @@ const Navbar = ({ role }) => {
 
         <button
           onClick={() => {
-            localStorage.removeItem("user");
+            localStorage.clear();
             window.location.href = "/";
           }}
         >

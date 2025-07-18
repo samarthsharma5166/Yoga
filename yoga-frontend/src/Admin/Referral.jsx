@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-
-const Referral = ({ userId }) => {
+// {
+//   userId;
+// }
+const Referral = () => {
   const [stats, setStats] = useState(null);
-
+  const user = JSON.parse(localStorage.getItem("user"));
+  const userId = user.id;
+  console.log(userId)
   useEffect(() => {
     const fetchReferralStats = async () => {
       try {

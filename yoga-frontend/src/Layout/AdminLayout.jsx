@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Outlet } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Outlet, useNavigate } from "react-router-dom";
 import Navbarr from "../components/Navbarr";
 import Sidebar from "../Admin/Dashboardsidebar";
 import {
@@ -21,9 +21,17 @@ const menuItems = [
 ];
 const Adminlayout = () => {
   const [open, setOpen] = useState(false);
+  const token = localStorage.getItem("token");
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!token) {
+      navigate("/auth/register");
+    }
+  })
 
   return (
-    <div className="admin-container">
+    <div className="admin-container mt-20">
       <Navbarr open={open} setOpen={setOpen} text="" />
 
       <div className="admin-body">

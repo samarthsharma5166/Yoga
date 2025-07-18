@@ -3,7 +3,7 @@ import { db } from "../config/db.js";
 
 // Count total users (e.g., counselors)
 export const countUsers = async () => {
-  const [rows] = await db.query("SELECT COUNT(*) AS total FROM manageusers");
+  const [rows] = await db.query("SELECT COUNT(*) AS total FROM users");
   return rows[0].total;
 };
 
@@ -22,6 +22,7 @@ export const countPayments = async () => {
 // Count total referrals
 export const countReferrals = async () => {
   const [rows] = await db.query("SELECT COUNT(*) AS total FROM users WHERE referred_by IS NOT NULL");
+  console.log("from countReferrals",rows[0].total)
   return rows[0].total;
 };
 

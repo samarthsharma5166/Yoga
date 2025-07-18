@@ -1,4 +1,4 @@
-import React, { use, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import CountUp from "react-countup";
 import Referral from "../Admin/Referral";
 import "./CSS/admindashboard.css";
@@ -23,6 +23,7 @@ const Dashboard = () => {
     // Fetch dashboard stats from the API
     getAdminStats()
       .then((res) => {
+        console.log(res)
           setStats({
             counselors: res.data.counselors,
             students: res.data.students,
@@ -63,7 +64,7 @@ const Dashboard = () => {
   );
 
   return (
-    <div className="mt-12">
+    <div >
       <h2 style={{ marginBottom: "1rem" }} className="text-2xl font-semibold border-b mt-14 mb-14">Welcome, {user.name}</h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2  gap-20 items-center justify-center mt-20">
