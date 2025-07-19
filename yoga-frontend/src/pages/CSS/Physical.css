@@ -1,8 +1,7 @@
-/* Physical.css */
-
+/* Container */
 .physical-container {
   padding: 60px 6%;
-  background: linear-gradient(to right, #e0f7ec, #f6fff9);
+  background: linear-gradient(to right, #caefdf, #95dd9b);
   font-family: 'Poppins', sans-serif;
   min-height: 100vh;
   animation: fadeIn 0.6s ease;
@@ -30,18 +29,9 @@
   position: relative;
 }
 
-.physical-container h1::after {
-  content: '';
-  display: block;
-  width: 70px;
-  height: 3px;
-  background-color: #43a047;
-  margin: 12px auto 30px;
-  border-radius: 4px;
-}
 
-/* Description Text */
-.physical-container p {
+/* Description */
+.physical-container > p {
   text-align: center;
   font-size: 16.5px;
   color: #2e7d32;
@@ -54,68 +44,69 @@
 .physical-sections {
   display: flex;
   flex-wrap: wrap;
-  gap: 25px;
+  gap: 30px;
   justify-content: center;
 }
 
-/* Card Box */
+/* Card with LEFT GREEN BORDER */
 .physical-card {
-  width: 280px;
-  height: 220px;
-  background: linear-gradient(to top, #ffffff, #e8f5e9);
+  background-color: #ffffff;
+  width: 300px;
+  height: 200px;
   border-radius: 16px;
-  padding: 25px;
-  box-shadow: 0 12px 24px rgba(60, 179, 113, 0.15);
+  padding: 30px 24px;
   position: relative;
-  perspective: 1000px;
-  transition: transform 0.4s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
+
+  /* ✅ Green border on the left */
+  border-left: 8px solid #4caf50;
+
+  /* Optional lift shadow */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
+/* Hover effect */
 .physical-card:hover {
-  transform: scale(1.04);
-  box-shadow: 0 16px 32px rgba(34, 139, 34, 0.2);
+  transform: translateY(-4px);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
 }
 
-/* Emoji Icon */
+/* Faded Emoji Icon */
 .physical-card::before {
   content: '🧘‍♂️';
   position: absolute;
   top: 16px;
   right: 20px;
-  font-size: 32px;
-  opacity: 0.1;
-  transform: rotate(-15deg);
+  font-size: 34px;
+  opacity: 0.08;
+  transform: rotate(-10deg);
 }
 
-/* Card Heading */
+/* Card Title */
 .physical-card h3 {
-  font-size: 21px;
+  font-size: 20px;
+  font-weight: 600;
   color: #2e7d32;
   margin-bottom: 12px;
-  font-weight: 600;
 }
 
 /* Card Text */
 .physical-card p {
-  font-size: 15px;
+  font-size: 15.5px;
   color: #4e5d52;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 600px) {
   .physical-container {
-    padding: 30px 15px;
+    padding: 30px 16px;
   }
 
   .physical-card {
     width: 100%;
     height: auto;
-    padding: 20px;
-  }
-
-  .physical-container h1 {
-    font-size: 28px;
+    padding: 24px;
   }
 
   .physical-card h3 {
@@ -124,5 +115,9 @@
 
   .physical-card p {
     font-size: 14px;
+  }
+
+  .physical-container h1 {
+    font-size: 28px;
   }
 }

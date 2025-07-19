@@ -34,11 +34,11 @@ const Slider = () => {
   ];
 
   const text = {
-    "Warrior Pose": '“In the stillness of the pose, find the warrior within.”',
-    "Lotus Meditation": '“Breathe in peace, breathe out worries.”',
-    "Nature's Harmony": '“Let nature be your guide to inner peace.”',
-    "Ocean Flow": '“Flow with the rhythm of the waves, find strength in the sun.”',
-    "Mountain Serenity": '“Reach for the sky, grounded by the earth.”',
+    "Tree Pose": '“Rooted in balance, rising with grace.”',
+    "Meditation": '“Chanting guides the mind into stillness and the soul into presence.”',
+    "Surya Namaskar": '“Salute the sun, awaken your inner light.”',
+    "Trikonasana": '“Expand with strength, align with clarity.”',
+    "Utkatasana": '“Ignite your strength, embrace the challenge.”',
     "Group Energy": '“United in breath, aligned in purpose.”',
     "Sunset Bliss": '“Embrace the light, release the day.”'
   };

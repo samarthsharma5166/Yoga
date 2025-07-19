@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react"; // Import useRef
+import React, { useEffect, useState, useRef } from "react";
 import "./CSS/Home.css";
 import AAImage from "../assets/logo.jpg";
 import ABImage from "../assets/yogasite2.jpg";
@@ -7,9 +7,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Mainslider from "../pages/mainslider";
 import yogaImage from "../assets/yr.png";
-// import medIcon from '../assets/s1.jpg';
-// import healthIcon from '../assets/s1.jpg';
-// import mindIcon from '../assets/s1.jpg';
 import {
   FaRulerCombined,
   FaGrinStars,
@@ -24,8 +21,7 @@ import {
   FaBell,
   FaUserMd,
 } from "react-icons/fa";
-import { Leaf, HeartPulse, Brain } from "lucide-react"; // Lucide icons
-//benifits
+import { Leaf, HeartPulse, Brain } from "lucide-react";
 import img1 from "../assets/b1.jpg";
 import img2 from "../assets/b2.jpg";
 import img3 from "../assets/b3.jpg";
@@ -34,11 +30,12 @@ import img5 from "../assets/b5.jpg";
 import img6 from "../assets/b6.jpg";
 
 import { registerUser } from "../services/api";
+import { MdOutlineFreeBreakfast } from "react-icons/md";
 
 const teamMembers = [
   {
     name: "Improved Flexibility and Posture",
-    role: "Founder", // 'role' seems to be a leftover from a "team" context, can be ignored or renamed for clarity if not used elsewhere
+    role: "Founder",
     image: img1,
   },
   {
@@ -118,22 +115,10 @@ const HomePage = () => {
 
   const founderSlides = [
     {
-      img: AAImage,
-      name: "Sanjay Kumar Mahesh",
-      title: "Founder & CEO",
-      desc: "Visionary behind India’s top Yoga movement with 12+ years of experience in building sustainable fitness routines.",
-    },
-    {
       img: ABImage,
       name: "Sanjay Kumar Mahesh",
-      title: "Fitness Expert & Mentor",
-      desc: "Empowering millions with his knowledge of yoga, wellness, and mindful living through digital transformation.",
-    },
-    {
-      img: AAImage,
-      name: "Sanjay Kumar Mahesh",
-      title: "Inspirational Speaker",
-      desc: "Recognized for his talks on discipline, productivity, and mental health at global wellness conferences.",
+      title: "Founder & CEO",
+      desc: "An IIT Roorkee graduate with a B.E. in Mechanical Engineering and 38 years of corporate experience, Sanjay Kumar Mahesh is a passionate yoga advocate committed to making quality yoga accessible to all. He believes yoga is more than just fitness—it’s a path to physical vitality, mental clarity, and inner balance. With a vision to bring transformative wellness to every doorstep, he leads India’s top yoga movement, blending tradition with convenience like never before.",
     },
   ];
 
@@ -188,10 +173,29 @@ const HomePage = () => {
     },
   ];
 
-  // yoga benifit section
+  const trainers = [
+    {
+      name: "Ms. Upma Kumari",
+      about:
+        "Certificate from Yoga Certification Board, Ministry of AYUSH, Government of India, Diploma in Naturopathy and Yoga, MA – Science of Living, Preksha Meditation & Yoga,  having more than 15 Years Experience of imparting Yoga Training.",
+      image: "./teacher1.jpg",
+    },
+    {
+      name: "Ankita Kwatra",
+      about:
+        "Certificate from Yoga Certification Board, Ministry of AYUSH, Government of India; Level 1 Teacher Training 200 Hours Certificate; Advanced Pranayama Teacher Training – Ananda Yoga School; Level 1 Master Practitioner Training in Sound Healing; having  8  Years of Experience of imparting Yoga Training.",
+      image: "./teacher2.jpg",
+    },
+    {
+      name: "Aniket Saini",
+      about:"Masters in Yogic Science, Gurukul Kangdi, Haridwar, having 6 Years of Experience of imparting Yoga Training, including 6 months Yoga teaching at Vietnam. ",
+      image: "./teacher3.jpg",
+    },
+  ];
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
-  const autoSlideIntervalRef = useRef(null); // Ref to store the interval ID
+  const autoSlideIntervalRef = useRef(null);
 
   const updateCarousel = (newIndex) => {
     if (isAnimating) return;
@@ -200,7 +204,6 @@ const HomePage = () => {
     const adjustedIndex = (newIndex + teamMembers.length) % teamMembers.length;
     setCurrentIndex(adjustedIndex);
 
-    // Reset auto-slide timer on manual interaction
     resetAutoSlide();
 
     setTimeout(() => {
@@ -221,34 +224,27 @@ const HomePage = () => {
     }
   };
 
-  // Function to start the auto-slide
   const startAutoSlide = () => {
     autoSlideIntervalRef.current = setInterval(() => {
       updateCarousel(currentIndex + 1);
-    }, 2000); // 2 seconds
+    }, 2000);
   };
 
-  // Function to clear the auto-slide interval
   const stopAutoSlide = () => {
     if (autoSlideIntervalRef.current) {
       clearInterval(autoSlideIntervalRef.current);
     }
   };
 
-  // Function to reset the auto-slide (stop and restart)
   const resetAutoSlide = () => {
     stopAutoSlide();
     startAutoSlide();
   };
 
-  // Effect for auto-sliding
   useEffect(() => {
-    startAutoSlide(); // Start auto-slide when component mounts
-
-    return () => {
-      stopAutoSlide(); // Clear interval when component unmounts
-    };
-  }, [currentIndex]); // Re-run effect when currentIndex changes to reset the timer
+    startAutoSlide();
+    return () => stopAutoSlide();
+  }, [currentIndex]);
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -260,22 +256,34 @@ const HomePage = () => {
     };
     document.addEventListener("keydown", handleKeyDown);
     return () => document.removeEventListener("keydown", handleKeyDown);
-  }, [currentIndex, isAnimating, updateCarousel]); // Added updateCarousel to dependencies
+  }, [currentIndex, isAnimating]);
 
   let touchStartX = 0;
+
+  // free registration section start
+  const [animate, setAnimate] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setAnimate(true);
+      setTimeout(() => setAnimate(false), 1000); // Animation duration
+    }, 5000); // Every 5 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+  // end
 
   return (
     <div className="home-wrapper">
       <Mainslider />
-      {/* Trusted Section */}
-      <section className="trusted-section">
-        <h4 className="subheading">Welcome to Yoga Website</h4>
+      {/* <section className="trusted-section"> */}
+      {/* <h4 className="subheading">Welcome to Yoga Website</h4>
         <h2 className="main-heading">Trusted by Members Worldwide</h2>
         <p className="description">
           We blend the best of old-school knowledge with modern tricks to help
           you form long-lasting healthy habits.
-        </p>
-        {/* <div className="stats-box">
+        </p> */}
+      {/* <div className="stats-box">
           <div className="stat-card">
             <h3>{members.toFixed(2)} Crore +</h3>
             <p>Community Members</p>
@@ -289,160 +297,223 @@ const HomePage = () => {
             <p>Google Rating</p>
           </div>
         </div> */}
-      </section>
-
-      {/* Benefits Section - Modified for Auto-slide and Overlay Text */}
+      {/* </section> */}
 
       <section className="yoga-join-us">
-        <h4 className="yoga-subtitle">Benefits</h4>
-        <h2 className="yoga-title">Reasons to Join Us</h2>
-
+        <h4 style={{ color: "black" }} className="yoga-subtitle">
+          Benefits
+        </h4>
+        <h2 style={{ color: "black" }} className="yoga-title">
+          Reasons to Join Us
+        </h2>
         <div className="yoga-card-grid">
-          {/* First 4 Benefit Cards */}
           <div
-            className="yoga-card yoga-purple"
+            className="yoga-card 	bg-[#E0F7FA] space-y-4"
             data-aos="zoom-in"
             data-aos-delay="0"
           >
-            <FaRulerCombined className="yoga-icon" />
-            <h4>Improve Flexibility & Posture</h4>
+            <div className="flex justify-center">
+              <FaRulerCombined
+                style={{ color: "#4CAF50" }}
+                className="yoga-icon"
+              />
+            </div>
+            <h4
+              style={{ color: "black" }}
+              className="text-center font-bold w-full"
+            >
+              Improve Flexibility & Posture
+            </h4>
             <ul>
-              <li>✓ Enhance Range of Motion</li>
-              <li>✓ Correct Body Alignment</li>
-              <li>✓ Alleviate Back Pain</li>
+              <li style={{ color: "black" }}>Enhance Range of Motion</li>
+              <li style={{ color: "black" }}>Correct Body Alignment</li>
+              <li style={{ color: "black" }}>Alleviate Back Pain</li>
             </ul>
           </div>
 
           <div
-            className="yoga-card yoga-red"
+            className="yoga-card bg-[#FCE4EC] space-y-4"
             data-aos="zoom-in"
             data-aos-delay="100"
           >
-            <FaGrinStars className="yoga-icon" />
-            <h4>Reduce Stress & Anxiety</h4>
+            <div className="flex justify-center">
+              <FaGrinStars style={{ color: "#4CAF50" }} className="yoga-icon" />
+            </div>
+            <h4 className="text-center font-bold w-full">
+              Reduce Stress & Anxiety
+            </h4>
             <ul>
-              <li>✓ Calm Your Mind</li>
-              <li>✓ Promote Relaxation</li>
-              <li>✓ Boost Mood</li>
+              <li>Calm Your Mind</li>
+              <li>Promote Relaxation</li>
+              <li>Boost Mood</li>
             </ul>
           </div>
 
           <div
-            className="yoga-card yoga-gold"
+            className="yoga-card yoga-gold 	bg-[#E8F5E9] space-y-4"
             data-aos="zoom-in"
             data-aos-delay="200"
           >
-            <FaBalanceScale className="yoga-icon" />
-            <h4>Enhance Strength & Balance</h4>
+            <div className="flex items-center justify-center">
+              <FaBalanceScale
+                style={{ color: "#4CAF50" }}
+                className="yoga-icon"
+              />
+            </div>
+            <h4 style={{ color: "black" }} className="font-bold w-full">
+              Enhance Strength & Balance
+            </h4>
             <ul>
-              <li>✓ Build Core Strength</li>
-              <li>✓ Improve Stability</li>
-              <li>✓ Prevent Falls</li>
+              <li style={{ color: "black" }}>Build Core Strength</li>
+              <li style={{ color: "black" }}>Improve Stability</li>
+              <li style={{ color: "black" }}>Prevent Falls</li>
             </ul>
           </div>
 
           <div
-            className="yoga-card yoga-light-blue"
+            className="yoga-card bg-[#E6F4EA] space-y-4"
             data-aos="zoom-in"
             data-aos-delay="300"
           >
-            <FaWind className="yoga-icon" />
-            <h4>Improve Breathing</h4>
+            <div className="flex items-center justify-center">
+              <FaWind style={{ color: "#4CAF50" }} className="yoga-icon" />
+            </div>
+            <h4 className="font-bold w-full">Improve Breathing</h4>
             <ul>
-              <li>✓ Deepen Respiration</li>
-              <li>✓ Increase Lung Capacity</li>
-              <li>✓ Optimize Oxygen Flow</li>
+              <li>Deepen Respiration</li>
+              <li>Increase Lung Capacity</li>
+              <li>Optimize Oxygen Flow</li>
             </ul>
           </div>
         </div>
-
-        {/* Separate grid for the 2 centered Benefit Cards */}
         <div className="yoga-card-grid yoga-grid-two-cols">
           <div
-            className="yoga-card yoga-dark-green"
+            className="yoga-card bg-[#FFF8E1] space-y-4"
             data-aos="zoom-in"
             data-aos-delay="400"
           >
-            <FaBolt className="yoga-icon" />
-            <h4>Increase Energy Levels</h4>
+            <div className="flex items-center justify-center">
+              <FaBolt
+                style={{ color: "#4CAF50" }}
+                className="yoga-icon text-black"
+              />
+            </div>
+            <h4 className="font-bold w-full">Increase Energy Levels</h4>
             <ul>
-              <li>✓ Revitalize Your Body</li>
-              <li>✓ Boost Vitality</li>
-              <li>✓ Combat Fatigue</li>
+              <li>Revitalize Your Body</li>
+              <li>Boost Vitality</li>
+              <li>Combat Fatigue</li>
             </ul>
           </div>
 
           <div
-            className="yoga-card yoga-pink"
+            className="yoga-card bg-[#F3E5F5] space-y-4"
             data-aos="zoom-in"
             data-aos-delay="500"
           >
-            <FaLightbulb className="yoga-icon" />
-            <h4>Enhance Mental Focus</h4>
+            <div className="flex items-center justify-center">
+              <FaLightbulb style={{ color: "#4CAF50" }} className="yoga-icon" />
+            </div>
+            <h4 style={{ color: "black" }} className="font-bold w-full">
+              Enhance Mental Focus
+            </h4>
             <ul>
-              <li>✓ Improve Concentration</li>
-              <li>✓ Sharpen Clarity</li>
-              <li>✓ Cultivate Mindfulness</li>
+              <li style={{ color: "black" }}>Improve Concentration</li>
+              <li style={{ color: "black" }}>Sharpen Clarity</li>
+              <li style={{ color: "black" }}>Cultivate Mindfulness</li>
             </ul>
           </div>
         </div>
+        {/* +++++++++++++ Feature section +++++++++++++ */}
+        <div className="feature-section">
+          <h4 style={{ color: "black" }} className="yoga-subtitle">
+            Membership Features
+          </h4>
+          <h2 style={{ color: "black" }} className="yoga-title">
+            Unlock Your Exclusive Benefits
+          </h2>
 
-        <div className="yoga-feature-section">
-          <h4 className="yoga-subtitle">Membership Features</h4>
-          <h2 className="yoga-title">Unlock Your Exclusive Benefits</h2>
+          <div className="feature-grid">
+            <div className="feature-card space-y-2">
+              {/* <MdOutlineFreeBreakfast className="icon" /> */}
+              <div className="flex justify-center">
+                <img src="./trial.png" className="w-16 h-16  " />
+              </div>
+              <h3 style={{ color: "black" }} className="font-bold text-xl">
+                Free Trials
+              </h3>
+              <p className="font-medium">
+                Enjoy a <strong>14-day absolutely free trial</strong> to explore
+                our yoga sessions.
+              </p>
+            </div>
+            <div className="feature-card space-y-2">
+              {/* <FaBell className="icon" /> */}
+              <div className="flex justify-center">
+                <img src="./yoga.png" className="w-16 h-16" />
+              </div>
+              <h3 style={{ color: "black" }} className="font-bold text-xl">
+                Daily Yoga
+              </h3>
+              <p className="font-medium">
+                Access <strong>365 days of uninterrupted yoga sessions</strong>{" "}
+                — stay consistent and transform your health daily.
+              </p>
+            </div>
+            <div className="feature-card space-y-2">
+              {/* <FaMobileAlt className="icon" /> */}
+              <div className="flex justify-center">
+                <img src="./qualified.png" className="w-16 h-16" />
+              </div>
+              <h3 style={{ color: "black" }} className="font-bold text-xl">
+                Experienced Trainers
+              </h3>
+              <p className="font-medium">
+                Learn from <strong>highly experienced yoga experts</strong>{" "}
+                offering guidance and depth in each asana.
+              </p>
+            </div>
+            <div className="feature-card space-y-2">
+              {/* <FaUsers className="icon" /> */}
+              <div className="flex justify-center">
+                <img src="./pc.png" className="w-16 h-16" />
+              </div>
+              <h3 style={{ color: "black" }} className="font-bold text-xl">
+                Online Access
+              </h3>
+              <p className="font-medium">
+                Attend classes <strong>from anywhere</strong> — all you need is
+                an internet connection.
+              </p>
+            </div>
 
-          <div className="yoga-card-grid">
-            {/* First 4 Feature Cards */}
-            <div
-              className="yoga-feature-card"
-              data-aos="fade-up"
-              data-aos-delay="0"
-            >
-              <FaShieldAlt className="yoga-icon" />
-              <span>Accountability Support</span>
+            <div className="feature-card second-row space-y-2">
+              {/* <FaClock className="icon" /> */}
+              <div className="flex justify-center">
+                <img src="./flexibleTiming.png" className="w-16 h-16" />
+              </div>
+              <h3 style={{ color: "black" }} className="font-bold text-xl">
+                Flexible Timings
+              </h3>
+              <p className="font-medium">
+                Sessions are available <strong>every single day</strong>, giving
+                you flexibility to practice at your pace.
+              </p>
             </div>
-            <div
-              className="yoga-feature-card"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              <FaClock className="yoga-icon" />
-              <span>Flexible Timings</span>
-            </div>
-            <div
-              className="yoga-feature-card"
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
-              <FaMobileAlt className="yoga-icon" />
-              <span>Easy Accessibility</span>
-            </div>
-            <div
-              className="yoga-feature-card"
-              data-aos="fade-up"
-              data-aos-delay="300"
-            >
-              <FaUsers className="yoga-icon" />
-              <span>Community Health Programs</span>
-            </div>
-          </div>
-          {/* Separate grid for the 2 centered Feature Cards */}
-          <div className="yoga-card-grid yoga-grid-two-cols">
-            <div
-              className="yoga-feature-card"
-              data-aos="fade-up"
-              data-aos-delay="400"
-            >
-              <FaBell className="yoga-icon" />
-              <span>Habit Tracking Reminders</span>
-            </div>
-            <div
-              className="yoga-feature-card"
-              data-aos="fade-up"
-              data-aos-delay="500"
-            >
-              <FaUserMd className="yoga-icon" />
-              <span>Physiotherapy Support</span>
+            <div className="feature-card second-row space-y-2">
+              {/* <FaUserMd className="icon" /> */}
+              <div className="flex justify-center">
+                <img src="./others.png" className="w-16 h-16" />
+              </div>
+              <h3 style={{ color: "black" }} className="font-bold text-xl">
+                Other Wellness Programs
+              </h3>
+              <p className="font-medium">
+                Subscribers get access to{" "}
+                <strong>additional wellness programs</strong>, including
+                <strong>nutrition guidance</strong> and more —{" "}
+                <strong>at no extra cost</strong>.
+              </p>
             </div>
           </div>
         </div>
@@ -450,7 +521,9 @@ const HomePage = () => {
 
       <section className="cta-section">
         <p>Start Your Journey</p>
-        <h2>Ready for a Change? Begin Your Wellness Journey!</h2>
+        <h2 style={{ color: "black" }}>
+          Ready for a Change? Begin Your Wellness Journey!
+        </h2>
         <button
           className="cta-button-glow"
           onClick={() => setShowRegister(true)}
@@ -460,54 +533,21 @@ const HomePage = () => {
         <p className="cta-note">1.18 Crore + already attended</p>
       </section>
 
-      <div className="divine-wrapper">
-        <div className="divine-container">
-          <div className="divine-left">
-            <img src={yogaImage} alt="Yoga Pose" className="yoga-image" />
-          </div>
-
-          <div className="divine-right">
-            <h5 className="subheading">RELISH IN NATURE’S NATURAL GIFT</h5>
-            <h1 className="main-heading">LIFE IN YOG SAATHI YOGA</h1>
-
-            <p className="desc">
-              Have suffered alteration in some form make anything from it of it.
-              Randomised words which don’t look even slightly believable.
-            </p>
-            <p className="desc">
-              The word Go also means “light”, so gomukh may refer to the light
-              in or of the head, or lightness of the head. The asana gets its
-              name because the thighs and calves of the person performing it
-              resemble a cow’s face, wide at one end and tapering toward the
-              other.
-            </p>
-
-            <div className="benefits">
-              <div className="benefit-item">
-                <Leaf className="benefit-icon" size={40} color="#2b7a0b" />
-                <p>
-                  <strong>Alternative Medicine</strong>
-                </p>
-              </div>
-              <div className="benefit-item">
-                <HeartPulse
-                  className="benefit-icon"
-                  size={40}
-                  color="#d62828"
-                />
-                <p>
-                  <strong>For Good Health</strong>
-                </p>
-              </div>
-              <div className="benefit-item">
-                <Brain className="benefit-icon" size={40} color="#1d3557" />
-                <p>
-                  <strong>Healthy Mind & Body</strong>
-                </p>
-              </div>
+      {/* ++++++++++++++++ Trainer ++++++++++++++ */}
+      <div className="divine-wrapper flex flex-wrap justify-evenly gap-10 px-20">
+        {trainers.map((trainer) => (
+          <div className="max-w-80 rounded-sm flex items-center flex-col space-y-3">
+            <img src={trainer.image} className="w-50 h-50 rounded-full " />
+            <div className="space-y-2">
+              <h1 className="great-vibes-regular text-white text-3xl text-center font-bold">
+                {trainer.name}
+              </h1>
+              <p className="text-white text-center font-medium text-xs tracking-wide">
+                {trainer.about}
+              </p>
             </div>
           </div>
-        </div>
+        ))}
       </div>
 
       {showRegister && (
@@ -541,49 +581,54 @@ const HomePage = () => {
             <button type="submit">Register</button>
             <p>{message}</p>
             <span className="close-btn" onClick={() => setShowRegister(false)}>
-              &times;
+              ×
             </span>
           </form>
         </div>
       )}
 
       <section className="founders-faqs">
-        <h2 className="section-title">Meet Your Habit-Building Founder</h2>
+        <h2 className="section-title">Meet Our Founder</h2>
 
-        <Slider {...sliderSettings} className="founder-slider">
+        <div {...sliderSettings} className="founder-slider ">
           {founderSlides.map((slide, index) => (
-            <div key={index} className="founder-slide">
-              <img src={slide.img} alt={slide.name} className="founder-img" />
+            <div key={index} className="founder-slide bg-[#AABB63]">
+              <div className="flex justify-center">
+                <img src={slide.img} alt={slide.name} className="founder-img" />
+              </div>
               <h4>{slide.name}</h4>
               <p>{slide.title}</p>
               <small>{slide.desc}</small>
             </div>
           ))}
-        </Slider>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
+        </div>
+        <br />
+        <br />
+        <br />
 
-      <h5 className="faq-heading">Frequently asked questions</h5>
-<div className="faq-container">
-  {faqs.map((faq, index) => (
-    <div
-      key={index}
-      className={`faq-item ${openIndex === index ? "open" : ""}`}
-      onClick={() => setOpenIndex(openIndex === index ? -1 : index)}
-    >
-      <div className="faq-question">
-        <strong>{faq.question}</strong>
-        <span>{openIndex === index ? "-" : "+"}</span>
-      </div>
-      <p className="faq-answer">
-        {faq.answer || "Content coming soon..."}
-      </p>
-    </div>
-  ))}
-</div>
-
+        <h1
+          style={{ paddingBottom: "20px", fontSize: "40px" }}
+          className="faq-heading"
+        >
+          Frequently asked questions
+        </h1>
+        <div className="faq-container">
+          {faqs.map((faq, index) => (
+            <div
+              key={index}
+              className={`faq-item ${openIndex === index ? "open" : ""}`}
+              onClick={() => setOpenIndex(openIndex === index ? -1 : index)}
+            >
+              <div className="faq-question">
+                <strong>{faq.question}</strong>
+                <span>{openIndex === index ? "-" : "+"}</span>
+              </div>
+              <p className="faq-answer">
+                {faq.answer || "Content coming soon..."}
+              </p>
+            </div>
+          ))}
+        </div>
       </section>
     </div>
   );

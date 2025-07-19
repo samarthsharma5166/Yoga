@@ -61,6 +61,10 @@
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
+.container{
+  background: linear-gradient(to right, #caefdf, #95dd9b);
+}
+
 .about-text {
   color: #374151;
   font-size: 1rem;
@@ -69,14 +73,21 @@
 }
 
 .about-section {
-  background-color: #f0fdfa;
-  border: 1px solid #99f6e4;
+  /* background-color: #f0fdfa; */
+  /* border: 1px solid #99f6e4; */
   padding: 1.5rem;
   border-radius: 0.75rem;
   margin-bottom: 2rem;
 }
 
 .about-section h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f766e;
+  margin-bottom: 1rem;
+}
+
+h3{
   font-size: 1.25rem;
   font-weight: 700;
   color: #0f766e;

@@ -1,63 +1,96 @@
-.policy-container {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 30px;
-  background-color: #fefefe;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+/* Page-style container */
+.refund-container {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 40px;
+  background-color: #fdfdfd;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #333;
+  color: #2d2d2d;
 }
 
-.policy-title {
-  font-size: 2rem;
-  color: #2c3e50;
-  margin-bottom: 10px;
-  border-left: 5px solid #007bff;
-  padding-left: 12px;
+/* Title & subtitle */
+.refund-title {
+  font-size: 32px;
+  text-align: center;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 12px;
 }
 
-.company-name {
-  font-weight: bold;
-  font-size: 1.1rem;
-  color: #444;
+.refund-subtitle {
+  font-size: 20px;
+  text-align: center;
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 32px;
+}
+
+/* Body text */
+.refund-text {
+  font-size: 16px;
+  line-height: 1.75;
+  margin-bottom: 18px;
+}
+
+/* Section Headings */
+.refund-section-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #222;
+  margin-top: 30px;
+  margin-bottom: 12px;
+}
+
+/* List styling */
+.refund-list {
+  list-style-type: disc;
+  padding-left: 25px;
   margin-bottom: 20px;
 }
 
-h3 {
-  color: #007bff;
-  margin-top: 25px;
+.refund-list li {
+  margin-bottom: 8px;
 }
 
-p {
-  margin-bottom: 15px;
-  line-height: 1.6;
+.refund-list-nobullet {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 24px;
 }
 
-ul {
-  padding-left: 20px;
-  margin-bottom: 20px;
+.refund-list-nobullet li {
+  margin-bottom: 8px;
+  font-size: 16px;
 }
 
-ul li {
-  margin-bottom: 10px;
-  line-height: 1.5;
-}
-
-.disclaimer {
-  font-size: 0.95rem;
+/* Footer / disclaimer */
+.refund-footer {
+  font-size: 14px;
   color: #777;
-  border-top: 1px solid #ccc;
-  padding-top: 15px;
-  margin-top: 25px;
+  font-style: italic;
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
 }
 
-@media screen and (max-width: 768px) {
-  .policy-container {
-    padding: 20px;
+/* Responsive */
+@media (max-width: 600px) {
+  .refund-container {
+    padding: 24px 16px;
   }
 
-  .policy-title {
-    font-size: 1.6rem;
+  .refund-title {
+    font-size: 26px;
+  }
+
+  .refund-subtitle {
+    font-size: 18px;
+  }
+
+  .refund-section-title {
+    font-size: 18px;
   }
 }

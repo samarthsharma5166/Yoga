@@ -1,93 +1,71 @@
-/* TermsOfUse.css or PrivacyTerms.css */
-
-.terms-container {
-  padding: 60px 8%;
-  background: linear-gradient(to right, #fdfdfd, #f3fbf5);
-  font-family: 'Poppins', sans-serif;
-  color: #2c3e50;
+.terms-page-wrapper {
   min-height: 100vh;
-  line-height: 1.7;
+  padding: 40px 20px;
+  background-color: #fdfdfd;
+}
+
+.terms-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 25px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   animation: fadeIn 0.5s ease-in-out;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.terms-header {
+  text-align: center;
+  margin-bottom: 25px;
 }
 
-.terms-container h1 {
-  font-size: 36px;
-  text-align: center;
-  color: #27ae60;
-  margin-bottom: 30px;
-  font-weight: 700;
+.terms-title {
+  font-size: 2rem;
+  color: #000;
+  margin-bottom: 12px;
 }
 
-.terms-container p.intro {
-  font-size: 16px;
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto 40px;
+.terms-intro {
+  font-size: 1rem;
+  color: #555;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.terms-section {
+  margin-top: 30px;
+}
+
+.terms-section h3 {
+  font-size: 1.3rem;
+  color: black;
+  margin-bottom: 10px;
+}
+
+.terms-section h4 {
+  font-size: 1.1rem;
+  color: #444;
+  margin-top: 15px;
+}
+
+.terms-section p {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 12px;
+}
+
+.terms-section ul {
+  padding-left: 20px;
+  font-size: 1rem;
   color: #444;
 }
 
-/* Each section box */
-.term-section {
-  background: #ffffff;
-  border-radius: 14px;
-  padding: 30px;
-  margin-bottom: 25px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
-  transition: 0.3s ease;
-}
-
-.term-section:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.1);
-}
-
-.term-section h2 {
-  font-size: 22px;
-  margin-bottom: 12px;
-  color: #27ae60;
-}
-
-.term-section ul {
-  padding-left: 20px;
-  margin-top: 10px;
-}
-
-.term-section li {
+.terms-section ul li {
   margin-bottom: 8px;
-  font-size: 15px;
-  color: #333;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .terms-container {
-    padding: 40px 20px;
-  }
-
-  .terms-container h1 {
-    font-size: 28px;
-  }
-
-  .term-section {
-    padding: 20px;
-  }
-
-  .term-section h2 {
-    font-size: 18px;
-  }
-
-  .term-section li {
-    font-size: 14px;
-  }
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
 }

@@ -23,7 +23,7 @@ export default function PublicBlogList() {
   };
 
   return (
-    <div className="blog-list-container">
+    <div className="blog-list-container min-h-screen">
       <h2 className="blog-heading">📰 Latest Blogs</h2>
       <div className="blog-grid">
         {blogs.map((blog, index) => (

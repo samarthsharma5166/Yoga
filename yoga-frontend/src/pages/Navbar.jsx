@@ -23,18 +23,54 @@ const Navbar = () => {
 
         {/* Toggle Icon (☰ or ✖) */}
         <div className="hamburger" onClick={toggleMenu}>
-          {menuOpen ? '✖' : '☰'}
+          {menuOpen ? "✖" : "☰"}
         </div>
 
         <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
-          <li><Link to="/" onClick={closeMenu}>Home</Link></li>
-          <li><Link to="/price" onClick={closeMenu}>Pricing</Link></li>
-          <li><Link to="/blogs" onClick={closeMenu}>Blog</Link></li>
-          <li><Link to="/livestream" onClick={closeMenu}>Live Events</Link></li>
-          <li><Link to="/about" onClick={closeMenu}>About Us</Link></li>
-          <li><Link to="/contact" onClick={closeMenu}>Contact Us</Link></li>
-         <li><Link to="/auth/login" onClick={closeMenu}>Login</Link></li>
-
+          <li>
+            <Link to="/" onClick={closeMenu}>
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link to="/price" onClick={closeMenu}>
+              Pricing
+            </Link>
+          </li>
+          <li>
+            <Link to="/blogs" onClick={closeMenu}>
+              Blog
+            </Link>
+          </li>
+          <li>
+            <Link to="/livestream" onClick={closeMenu}>
+              Live Events
+            </Link>
+          </li>
+          <li>
+            <Link to="/about" onClick={closeMenu}>
+              About Us
+            </Link>
+          </li>
+          <li>
+            <Link to="/contact" onClick={closeMenu}>
+              Contact Us
+            </Link>
+          </li>
+          {/* <li>
+            <Link to="/auth/login" onClick={closeMenu}>
+              Login
+            </Link>
+          </li> */}
+          <li className="join-now">
+            <Link
+              className="border-green-500"
+              to="/auth/register"
+              onClick={closeMenu}
+            >
+              Join Now
+            </Link>
+          </li>
         </ul>
       </div>
     </nav>

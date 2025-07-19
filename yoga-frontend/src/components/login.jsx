@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { loginUser } from "../services/api";
-import { useNavigate, Link } from "react-router-dom"; // ✅ Link imported
-// import "../pages/CSS/relogin.css"
+import { useNavigate, Link } from "react-router-dom";
+import "../pages/CSS/reglogin.css";
 
- function Login() {
+function Login() {
   const [form, setForm] = useState({ email: "", password: "" });
   const navigate = useNavigate();
 
@@ -35,31 +35,36 @@ import { useNavigate, Link } from "react-router-dom"; // ✅ Link imported
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-    <center><h1>LOGIN</h1></center>
-      <input
-        name="email"
-        onChange={handleChange}
-        placeholder="Email"
-        required
-      />
-      <input
-        name="password"
-        type="password"
-        onChange={handleChange}
-        placeholder="Password"
-        required
-      />
-      <button type="submit">Login</button>
+    <div className="auth-container">
+      <form className="auth-form" onSubmit={handleSubmit}>
+        <h2>Login</h2>
+        <input
+          name="email"
+          onChange={handleChange}
+          placeholder="Email"
+          required
+        />
+        <input
+          name="password"
+          type="password"
+          onChange={handleChange}
+          placeholder="Password"
+          required
+        />
+        <button type="submit">Login</button>
 
-      {/* ✅ Sign up redirect line */}
-      <p style={{ marginTop: "10px", textAlign: "center" }}>
-        Don't have an account?{" "}
-        <Link to="/auth/register" style={{ color: "#007bff", textDecoration: "none" }}>
-          Sign up
-        </Link>
-      </p>
-    </form>
+        <p>
+          Don't have an account?{" "}
+          <Link
+            to="/auth/register"
+            style={{ color: "#007bff", textDecoration: "none" }}
+          >
+            Sign up
+          </Link>
+        </p>
+      </form>
+    </div>
   );
 }
-export default Login
+
+export default Login;

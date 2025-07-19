@@ -6,8 +6,8 @@ import { IoLogoYoutube } from "react-icons/io";
 
 const Footer = () => {
   const [footerData, setFooterData] = useState({
-    address: "",
-    phone: "",
+    address: " Yoga Saathi, M/s Healthy Horizons Pvt. Ltd., Noida",
+    phone: "+91 9910433340",
     cities: [],
   });
 
@@ -19,7 +19,7 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer className="footer">
+    <footer className="footer relative bottom-0 right-0 w-full">
       <div className="footer-container">
         {/* Logo & Contact */}
         <div className="footer-section">
@@ -62,7 +62,7 @@ const Footer = () => {
         <div className="footer-section">
           <h3 className="footer-section-title">Blog</h3>
           <ul className="footer-list">
-            <li><a href="/nutrition" className="footer-link">Nutrition</a></li>
+            {/* <li><a href="/nutrition" className="footer-link">Nutrition</a></li> */}
             <li><a href="/physical" className="footer-link">Physical</a></li>
             <li><a href="/mentalhealth" className="footer-link">Mental Wellness</a></li>
             <li><a href="/lifestyle" className="footer-link">Lifestyle</a></li>

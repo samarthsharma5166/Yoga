@@ -23,6 +23,7 @@ import Physical from "./pages/Physical";
 import Lifestyle from "./pages/Lifestyle";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfUse from "./pages/TermsOfUse";
+import Greet from "./pages/Greet.jsx"
 import AuthLayout from "./Layout/AuthLayout.jsx";
 import Register from "./components/Register";
 import Login from "./components/login";
@@ -61,6 +62,7 @@ function AppContent() {
           <Route path="/" element={<HomePage />} />
           <Route path="/auth" element={<AuthLayout />}>
             <Route path="register" element={<Register />} />
+            <Route path="greet" element={<Greet/>}/>
             <Route path="login" element={<Login />} />
           </Route>
           

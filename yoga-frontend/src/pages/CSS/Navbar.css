@@ -91,3 +91,11 @@ color: #2e7d32;
   .nav-links li:last-child {
     margin-bottom: 0;}
 }
+
+.join-now{
+  border: 1px solid #2e7d32;
+  padding: 5px 10px;
+  border-radius: 8px;
+  color: #2e7d32;
+  font-weight: 600;
+}

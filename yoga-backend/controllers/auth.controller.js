@@ -10,7 +10,7 @@ import {
 
 // ✅ REGISTER Controller
 export const register = async (req, res) => {
-  const { name, email, password, referred_by } = req.body;
+  const { name, email, password, referred_by, number } = req.body;
 
   try {
     const existingUser = await getUserByEmail(email);
@@ -27,11 +27,12 @@ export const register = async (req, res) => {
     }
 
     const [result] = await db.execute(
-      "INSERT INTO users (name, email, password, role, referral_code, referred_by, referral_count) VALUES (?, ?, ?, ?, ?, ?, ?)",
+      "INSERT INTO users (name, email, password, number, role, referral_code, referred_by, referral_count) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
       [
         name,
         email,
         hashedPassword,
+        number,
         "user",
         referral_code,
         safeReferrer,

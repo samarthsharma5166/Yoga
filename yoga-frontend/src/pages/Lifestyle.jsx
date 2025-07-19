@@ -1,23 +1,48 @@
-import React from 'react';
-import './CSS/Lifestyle.css';
+import React from "react";
+import "./CSS/Lifestyle.css";
 
 const Lifestyle = () => {
   return (
-    <div className="lifestyle-container">
-      <h1>Yogic Lifestyle</h1>
-      <p>Build peace and productivity with healthy routines and ancient wisdom.</p>
-      <div className="lifestyle-sections">
-        <div className="lifestyle-card">
-          <h3>Morning Routine</h3>
-          <p>Start your day with yoga, journaling, and meditation.</p>
+    <div className="mental-wellness-container min-h-screen">
+      <h2 className="text-3xl font-bold text-[#2e7d32]"> Life Style</h2>
+      <p className="mental-subtext">
+        Prioritize your mind with mindful practices, breathing techniques, and
+        emotional balance.
+      </p>
+
+      <div className="mental-cards">
+        <div className="mental-card">
+          <h3>
+            {" "}
+            <span> 🗓️ </span> Daily Routine
+          </h3>
+          <p>Yoga sessions available on 365 days round the year.</p>
         </div>
-        <div className="lifestyle-card">
-          <h3>Stress Reduction</h3>
-          <p>Tips for managing anxiety through breathwork and mindfulness.</p>
+        <div className="mental-card">
+          <h3>
+            {" "}
+            <span> ⏰ </span> Flexible Timings
+          </h3>
+          <p>
+            Six Sessions (Three morning and 3 evening) available on daily basis
+          </p>
         </div>
-        <div className="lifestyle-card">
-          <h3>Principles of Yoga</h3>
-          <p>Learn about Ahimsa (non-violence), Satya (truth), and more.</p>
+        <div className="mental-card">
+          <h3 className="">
+            {" "}
+            <span> 🧘‍♂️ </span> Stress-Free Lifestyle
+          </h3>
+          <p>
+            45 min session of Yoga will make your life stressfree and bring
+            mental peace.
+          </p>
+        </div>
+        <div className="mental-card">
+          <h3>
+            {" "}
+            <span>⚡ </span> Enhanced Energy
+          </h3>
+          <p>Yoga session will bring energy, power & strength</p>
         </div>
       </div>
     </div>
