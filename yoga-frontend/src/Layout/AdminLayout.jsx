@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
-import Navbarr from "../components/Navbarr";
+import Navbarr from "../components/Navbar";
 import Sidebar from "../Admin/Dashboardsidebar";
 import {
   Dashboard as DashboardIcon,
@@ -9,7 +9,8 @@ import {
   BarChart as ProgressIcon,
   School as TestIcon,
 } from "@mui/icons-material";
-import './CSS/adminlayout.css'
+import "./CSS/adminlayout.css";
+import Drawer from "../components/Drawer";
 
 const menuItems = [
   { name: "Dashboard", icon: <DashboardIcon />, path: "admin-dashboard" },
@@ -28,16 +29,18 @@ const Adminlayout = () => {
     if (!token) {
       navigate("/auth/register");
     }
-  })
+  });
 
   return (
     <div className="admin-container mt-20">
       <Navbarr open={open} setOpen={setOpen} text="" />
 
       <div className="admin-body">
-        <Sidebar menuItems={menuItems} open={open} setOpen={setOpen} />
+        {/* <Sidebar menuItems={menuItems} open={open} setOpen={setOpen} /> */}
+        {/* New Drawer */}
         <div className="main-content">
-          <Outlet/>
+          <Drawer menuItems={menuItems} />
+          <Outlet />
         </div>
       </div>
     </div>

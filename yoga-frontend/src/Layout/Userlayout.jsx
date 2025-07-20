@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Outlet } from "react-router-dom";
-import Navbarr from "../components/Navbarr";
+import Navbarr from "../components/Navbar";
 import Sidebar from "../Admin/Dashboardsidebar";
 
 import {
@@ -11,7 +11,7 @@ import {
   Group as ReferralIcon,
 } from "@mui/icons-material";
 
-import './CSS/userlayout.css'; // ✅ Use this for styling
+import "./CSS/userlayout.css"; // ✅ Use this for styling
 
 const menuItems = [
   { name: "Dashboard", icon: <DashboardIcon />, path: "dashboard" },
@@ -25,14 +25,15 @@ const Userlayout = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="user-container">
+    <div className="user-container mt-20">
       <Navbarr open={open} setOpen={setOpen} text="User Panel" />
 
       <div className="user-body">
         <Sidebar menuItems={menuItems} open={open} setOpen={setOpen} />
-        
+
         <div className="user-main-content">
-          <Outlet />
+          <h1 className="text-2xl ">Comming Soon....</h1>
+          {/* <Outlet /> */}
         </div>
       </div>
     </div>

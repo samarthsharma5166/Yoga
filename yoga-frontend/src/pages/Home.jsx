@@ -534,20 +534,26 @@ const HomePage = () => {
       </section>
 
       {/* ++++++++++++++++ Trainer ++++++++++++++ */}
-      <div className="divine-wrapper flex flex-wrap justify-evenly gap-10 px-20">
-        {trainers.map((trainer) => (
-          <div className="max-w-80 rounded-sm flex items-center flex-col space-y-3">
-            <img src={trainer.image} className="w-50 h-50 rounded-full " />
-            <div className="space-y-2">
-              <h1 className="great-vibes-regular text-white text-3xl text-center font-bold">
-                {trainer.name}
-              </h1>
-              <p className="text-white text-center font-medium text-xs tracking-wide">
-                {trainer.about}
-              </p>
+      <div className="divine-wrapper space-y-3">
+        <h1 className=" text-white text-3xl text-center font-bold">
+          Our Trainers
+        </h1>
+        <div className="h-1 bg-white w-1/20 mx-auto rounded mb-10"></div>
+        <div className=" flex flex-wrap justify-evenly gap-10 px-20">
+          {trainers.map((trainer) => (
+            <div className="max-w-80 rounded-sm flex items-center flex-col space-y-3">
+              <img src={trainer.image} className="w-50 h-50 rounded-full " />
+              <div className="space-y-2">
+                <h1 className="text-white text-3xl text-center font-bold">
+                  {trainer.name}
+                </h1>
+                <p className="text-white text-center font-medium text-xs tracking-wide">
+                  {trainer.about}
+                </p>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
 
       {showRegister && (
@@ -590,13 +596,13 @@ const HomePage = () => {
       <section className="founders-faqs">
         <h2 className="section-title">Meet Our Founder</h2>
 
-        <div {...sliderSettings} className="founder-slider ">
+        <div {...sliderSettings} className="founder-slider">
           {founderSlides.map((slide, index) => (
             <div key={index} className="founder-slide bg-[#AABB63]">
               <div className="flex justify-center">
                 <img src={slide.img} alt={slide.name} className="founder-img" />
               </div>
-              <h4>{slide.name}</h4>
+              <h4 className="text-white">{slide.name}</h4>
               <p>{slide.title}</p>
               <small>{slide.desc}</small>
             </div>

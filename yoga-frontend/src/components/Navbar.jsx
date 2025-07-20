@@ -18,25 +18,24 @@ const Navbar = ({ role }) => {
 
   return (
     <nav className="navbar">
-      <div className="navbar-left">
-        <img src={logo} alt="Logo" className="logo" />
-      </div>
-
-      <div className="navbar-right">
-        {/* 👇 Show Hello, Name */}
-        {name && <span className="user-name">Hello, {name}</span>}
-
-        {/* 👇 Show First Letter in Circle */}
-        <div className="profile-circle">{firstLetter}</div>
-
-        <button
-          onClick={() => {
-            localStorage.clear();
-            window.location.href = "/";
-          }}
-        >
-          Logout
-        </button>
+      <div className='navbar-container'>
+        <div className="navbar-left">
+          <img src={logo} alt="Logo" className="logo" />
+        </div>
+        <div className="navbar-right">
+          {/* 👇 Show Hello, Name */}
+          {name && <span className="user-name">Hello, {name}</span>}
+          {/* 👇 Show First Letter in Circle */}
+          <div className="profile-circle">{firstLetter}</div>
+          <button
+            onClick={() => {
+              localStorage.clear();
+              window.location.href = "/";
+            }}
+          >
+            Logout
+          </button>
+        </div>
       </div>
     </nav>
   );
