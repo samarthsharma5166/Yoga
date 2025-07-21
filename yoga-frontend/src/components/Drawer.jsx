@@ -15,7 +15,7 @@ const Drawer = ({ menuItems }) => {
   };
     
   return (
-    <div className="drawer relative z-50 my-5">
+    <div style={{ zIndex: 1000 }} className="drawer relative my-5">
       <input id="my-drawer" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content">
         {/* Page content here */}

@@ -46,6 +46,7 @@ import UserLayout from "./Layout/Userlayout";
 import Navbar from "./pages/Navbar";
 import Footer from "./components/Footer";
 import ManageClasses from "./Admin/ManageClasses";
+import Users from "./pages/Users.jsx";
 
 function AppContent() {
   const location = useLocation();
@@ -62,10 +63,10 @@ function AppContent() {
           <Route path="/" element={<HomePage />} />
           <Route path="/auth" element={<AuthLayout />}>
             <Route path="register" element={<Register />} />
-            <Route path="greet" element={<Greet/>}/>
+            <Route path="greet" element={<Greet />} />
             <Route path="login" element={<Login />} />
           </Route>
-          
+
           <Route path="/blogs" element={<BlogList />} />
           <Route path="/livestream" element={<LiveStreamPage />} />
           <Route path="price" element={<Pricing />} />
@@ -88,6 +89,7 @@ function AppContent() {
             <Route path="manage-user" element={<Manageuser />} />
             <Route path="manage-classes" element={<ManageClasses />} />
             <Route path="price" element={<Pricing />} />
+            <Route path="users" element={<Users />} />
           </Route>
 
           {/* User Routes with Layout */}

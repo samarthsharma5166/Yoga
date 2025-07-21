@@ -11,6 +11,7 @@ import {
 } from "@mui/icons-material";
 import "./CSS/adminlayout.css";
 import Drawer from "../components/Drawer";
+import {  Users2Icon } from "lucide-react";
 
 const menuItems = [
   { name: "Dashboard", icon: <DashboardIcon />, path: "admin-dashboard" },
@@ -19,6 +20,7 @@ const menuItems = [
   { name: "Manage Class", icon: <ReportIcon />, path: "manage-classes" },
   { name: "Manage Payment", icon: <ProgressIcon />, path: "price" },
   { name: "Manage Refferal", icon: <TestIcon />, path: "refferal" },
+  { name: "Users", icon: <Users2Icon />, path: "users" },
 ];
 const Adminlayout = () => {
   const [open, setOpen] = useState(false);
