@@ -132,47 +132,88 @@ const HomePage = () => {
     autoplaySpeed: 4000,
   };
 
+  // const faqs = [
+  //   {
+  //     question: "How do I join the Class?",
+  //     answer:
+  //       "You can join the class by clicking the link sent to you on WhatsApp. You can join on a mobile or devices such as TV via YouTube. The application is simple and user-friendly.",
+  //   },
+  //   {
+  //     question: "Can I change the Slots as per my convenience?",
+  //     answer:
+  //       "Absolutely yes. For example, you can join a session today at 6 AM, tomorrow at 8:30 AM, and the next day at 6:30 PM as per your convenience. Total six slots are available every day—you can choose any one.",
+  //   },
+  //   {
+  //     question: "Is it possible to join only part of a session?",
+  //     answer:
+  //       "Yes, you can join the program for a shorter period. However, we recommend joining the full session if possible. In case of any urgency, even partial attendance is better than none.",
+  //   },
+  //   {
+  //     question:
+  //       "Can I understand the instructions online and follow them properly?",
+  //     answer:
+  //       "Yes, the instructions are given in Hindi with some English. The pace is moderate, so you can easily follow and do yoga with us.",
+  //   },
+  //   {
+  //     question: "Can I follow the correct postures through online sessions?",
+  //     answer:
+  //       "Yes, yoga is demonstrated by experienced instructors with proper emphasis on correct postures and the right way of doing asanas.",
+  //   },
+  //   {
+  //     question:
+  //       "Are these sessions suitable for beginners or experienced individuals, young or old?",
+  //     answer:
+  //       "These sessions are thoughtfully designed to suit all age groups—beginners as well as experienced yoga practitioners. The selection of asanas ensures wellbeing for all.",
+  //   },
+  //   {
+  //     question:
+  //       "Are extra sessions like Nutritionist included or do I have to pay separately?",
+  //     answer:
+  //       "These sessions are absolutely free and included in your subscription. No extra charges are required.",
+  //   },
+  // ];
+
+
   const faqs = [
     {
       question: "How do I join the Class?",
       answer:
-        "You can join the class by clicking the link sent to you on WhatsApp. You can join on a mobile or devices such as TV via YouTube. The application is simple and user-friendly.",
+        "You can join the Class by clicking link sent to you on Whats App. You can join on Mobile or devices such as TV etc. can be linked to do the Yoga with us thru You Tube. The Application is simple and User-friendly.",
     },
     {
       question: "Can I change the Slots as per my convenience?",
       answer:
-        "Absolutely yes. For example, you can join a session today at 6 AM, tomorrow at 8:30 AM, and the next day at 6:30 PM as per your convenience. Total six slots are available every day—you can choose any one.",
+        "Absolutely yes. For example,  you can join session today at 6 AM, tomorrow at 8.30 AM and next day 6.30 PM as per your convenience. Total six slots are available every day, you can chose any one.",
     },
     {
-      question: "Is it possible to join only part of a session?",
+      question: "Whether  it is possible to join for part session?",
       answer:
-        "Yes, you can join the program for a shorter period. However, we recommend joining the full session if possible. In case of any urgency, even partial attendance is better than none.",
+        "Yes, you can join the program for shorter period, however we recommend that you must  join  full session as far as possible. However in case of any exigency, even joining part session is better than not to join at all.",
     },
     {
       question:
-        "Can I understand the instructions online and follow them properly?",
+        "Can I understand the instructions on-line and follow the same?",
       answer:
-        "Yes, the instructions are given in Hindi with some English. The pace is moderate, so you can easily follow and do yoga with us.",
+        "Yes, the instructions are in Hindi with some mix of English and pace is moderate. You can follow and do Yoga easily with us.",
     },
     {
-      question: "Can I follow the correct postures through online sessions?",
+      question:
+        "Can  I  follow correct postures and do the Yoga in right way through On-Line Sessions?",
       answer:
         "Yes, yoga is demonstrated by experienced instructors with proper emphasis on correct postures and the right way of doing asanas.",
     },
     {
       question:
-        "Are these sessions suitable for beginners or experienced individuals, young or old?",
+        "Are these sessions for Beginners or Experienced Yoga Enthusiasts; Young or Old People?",
       answer:
-        "These sessions are thoughtfully designed to suit all age groups—beginners as well as experienced yoga practitioners. The selection of asanas ensures wellbeing for all.",
+        "These Sessions are designed after lot of considerations and thinking so that these are suitable for all age-groups, beginners as well as experienced people. The selection of Asanas has been done by expert Yoga Trainers keeping the wellbeing of all walks of people  in mind.",
     },
     {
       question:
-        "Are extra sessions like Nutritionist included or do I have to pay separately?",
-      answer:
-        "These sessions are absolutely free and included in your subscription. No extra charges are required.",
+        "Does extra session such as Nutritionist etc. are free (included in subscription amount) or additional amount is to be paid separately before these sessions?",
+      answer: "The sessions are absolutely free and no charges are to be paid.",
     },
   ];
-
   const trainers = [
     {
       name: "Ms. Upma Kumari",

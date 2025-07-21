@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import logo from '../assets/yogalogonew.png';
 import '../pages/CSS/navbarr.css';
+            import MenuIcon from "@mui/icons-material/Menu";
 
-const Navbar = ({ role }) => {
+
+const Navbar = ({ open,setOpen }) => {
   const [name, setName] = useState('');
   const [firstLetter, setFirstLetter] = useState('');
 
@@ -27,13 +29,16 @@ const Navbar = ({ role }) => {
           {name && <span className="user-name">Hello, {name}</span>}
           {/* 👇 Show First Letter in Circle */}
           <div className="profile-circle">{firstLetter}</div>
-          <button
+          {/* <button
             onClick={() => {
               localStorage.clear();
               window.location.href = "/";
             }}
           >
             Logout
+          </button> */}
+          <button className='md:hidden' onClick={() => setOpen(true)}>
+            <MenuIcon/>
           </button>
         </div>
       </div>

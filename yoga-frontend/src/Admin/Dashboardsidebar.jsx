@@ -43,6 +43,7 @@ export default function DashboardSidebar({ menuItems, open, setOpen }) {
             flexShrink: 0,
             "& .MuiDrawer-paper": {
               width: drawerWidth,
+           
               marginTop: "84px",
               height: "calc(100% - 84px)",
               borderRight: "none",
@@ -61,11 +62,12 @@ export default function DashboardSidebar({ menuItems, open, setOpen }) {
         open={open}
         onClose={() => setOpen(false)}
         ModalProps={{ keepMounted: true }}
+        style={{zIndex: 99999}}
         sx={{
           display: { xs: "block", md: "none" },
           "& .MuiDrawer-paper": {
             width: drawerWidth,
-            paddingTop: "92px",
+            paddingTop: "2px",
             overflowY: "auto",
           },
         }}

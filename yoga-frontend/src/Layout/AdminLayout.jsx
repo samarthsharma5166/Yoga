@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 import Navbarr from "../components/Navbar";
 import Sidebar from "../Admin/Dashboardsidebar";
+import { IoIosMenu } from "react-icons/io";
+import LogoutIcon from "@mui/icons-material/Logout";
 import {
   Dashboard as DashboardIcon,
   AccountCircle as SessionIcon,
@@ -12,6 +14,8 @@ import {
 import "./CSS/adminlayout.css";
 // import Drawer from "../components/Drawer";
 import {  Users2Icon } from "lucide-react";
+import { Button } from "@mui/material";
+import { IoIosExit } from "react-icons/io";
 
 const menuItems = [
   { name: "Dashboard", icon: <DashboardIcon />, path: "admin-dashboard" },
@@ -21,6 +25,7 @@ const menuItems = [
   { name: "Manage Payment", icon: <ProgressIcon />, path: "price" },
   { name: "Manage Refferal", icon: <TestIcon />, path: "refferal" },
   { name: "Users", icon: <Users2Icon />, path: "users" },
+  { name: "Logout", icon: <LogoutIcon />, path: "logout" },
 ];
 const Adminlayout = () => {
   const [open, setOpen] = useState(false);
@@ -41,6 +46,7 @@ const Adminlayout = () => {
         <Sidebar menuItems={menuItems} open={open} setOpen={setOpen} />
         {/* New Drawer */}
         <div className="main-content">
+          
           <Outlet />
         </div>
       </div>

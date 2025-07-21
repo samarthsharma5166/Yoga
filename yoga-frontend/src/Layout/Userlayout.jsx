@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import Navbarr from "../components/Navbar";
 import Sidebar from "../Admin/Dashboardsidebar";
+import LogoutIcon from "@mui/icons-material/Logout";
+
 
 import {
   Dashboard as DashboardIcon,
@@ -19,10 +21,13 @@ const menuItems = [
   { name: "Bookings", icon: <BookingIcon />, path: "classbook" },
   { name: "Payment", icon: <PaymentIcon />, path: "price" },
   { name: "Referrals", icon: <ReferralIcon />, path: "refferal" },
+  { name: "Logout", icon: <LogoutIcon />, path: "logout" },
 ];
 
 const Userlayout = () => {
   const [open, setOpen] = useState(false);
+  const location = useLocation();
+  console.log(location.pathname);
 
   return (
     <div className="user-container mt-20">
@@ -34,6 +39,7 @@ const Userlayout = () => {
         <div className="user-main-content">
           <h1 className="text-2xl ">Comming Soon....</h1>
           {/* <Outlet /> */}
+          {location.pathname === "/user/logout" && <Outlet/>}
         </div>
       </div>
     </div>

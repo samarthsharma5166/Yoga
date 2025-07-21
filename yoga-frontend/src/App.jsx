@@ -1,5 +1,5 @@
 // src/App.jsx
-import React from "react";
+import React, { useEffect } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -47,6 +47,7 @@ import Navbar from "./pages/Navbar";
 import Footer from "./components/Footer";
 import ManageClasses from "./Admin/ManageClasses";
 import Users from "./pages/Users.jsx";
+import Logout from "./pages/Logout.jsx";
 
 function AppContent() {
   const location = useLocation();
@@ -90,6 +91,7 @@ function AppContent() {
             <Route path="manage-classes" element={<ManageClasses />} />
             <Route path="price" element={<Pricing />} />
             <Route path="users" element={<Users />} />
+            <Route path="logout" element={<Logout />} />
           </Route>
 
           {/* User Routes with Layout */}
@@ -99,6 +101,7 @@ function AppContent() {
             <Route path="demobook" element={<DemoBooking />} />
             <Route path="price" element={<Pricing />} />
             <Route path="refferal" element={<Refferal />} />
+            <Route path="logout" element={<Logout />} />
           </Route>
         </Routes>
       </div>
