@@ -315,7 +315,7 @@ const HomePage = () => {
   // end
 
   return (
-    <div className="home-wrapper">
+    <div className="home-wrapper mt-24">
       <Mainslider />
       {/* <section className="trusted-section"> */}
       {/* <h4 className="subheading">Welcome to Yoga Website</h4>
@@ -520,7 +520,7 @@ const HomePage = () => {
                 <img src="./pc.png" className="w-16 h-16" />
               </div>
               <h3 style={{ color: "black" }} className="font-bold text-xl">
-                Online Access
+                Easy Accessibility
               </h3>
               <p className="font-medium">
                 Attend classes <strong>from anywhere</strong> — all you need is
@@ -588,7 +588,7 @@ const HomePage = () => {
                 <h1 className="text-white text-3xl text-center font-bold">
                   {trainer.name}
                 </h1>
-                <p className="text-white text-center font-medium text-xs tracking-wide">
+                <p className="text-white text-center font-medium text-sm tracking-wide">
                   {trainer.about}
                 </p>
               </div>

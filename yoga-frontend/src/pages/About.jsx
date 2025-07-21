@@ -1,6 +1,6 @@
 import React from 'react';
 import founderImg from '../assets/yogasite.jpg';
-import forewordImg from '../assets/yogasite2.jpg';
+// import forewordImg from '../assets/yogasite2.jpg';
 import "./CSS/About.css"
 const About = () => {
   return (

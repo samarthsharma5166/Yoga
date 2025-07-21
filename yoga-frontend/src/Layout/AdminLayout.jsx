@@ -46,7 +46,6 @@ const Adminlayout = () => {
         <Sidebar menuItems={menuItems} open={open} setOpen={setOpen} />
         {/* New Drawer */}
         <div className="main-content">
-          
           <Outlet />
         </div>
       </div>

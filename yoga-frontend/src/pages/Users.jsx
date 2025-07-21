@@ -36,7 +36,7 @@ const Users = () => {
   }
 
   return (
-    <div className="w-full p-4">
+    <div className="w-full p-4 ">
       <Typography variant="h4" align="center" gutterBottom>
         Users
       </Typography>
@@ -44,14 +44,14 @@ const Users = () => {
       <TableContainer component={Paper} sx={{ maxHeight: 600 }}>
         <Table stickyHeader>
           <TableHead>
-            <TableRow>
-              <TableCell>id</TableCell>
-              <TableCell>Name</TableCell>
-              <TableCell>Email</TableCell>
-              <TableCell>Role</TableCell>
-              <TableCell>Referral Code</TableCell>
-              <TableCell>Referred By</TableCell>
-              <TableCell>Number</TableCell>
+            <TableRow > 
+              <TableCell sx={{ fontWeight: "bold", backgroundColor:"#e0e0e0" }}>id</TableCell>
+              <TableCell sx={{ fontWeight: "bold", backgroundColor:"#e0e0e0" }}>Name</TableCell>
+              <TableCell sx={{ fontWeight: "bold", backgroundColor:"#e0e0e0" }}>Email</TableCell>
+              <TableCell sx={{ fontWeight: "bold", backgroundColor:"#e0e0e0" }}>Role</TableCell>
+              <TableCell sx={{ fontWeight: "bold", backgroundColor:"#e0e0e0" }}>Referral Code</TableCell>
+              <TableCell sx={{ fontWeight: "bold", backgroundColor:"#e0e0e0" }}>Referred By</TableCell>
+              <TableCell sx={{ fontWeight: "bold", backgroundColor:"#e0e0e0" }}>Number</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>

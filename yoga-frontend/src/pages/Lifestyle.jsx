@@ -24,7 +24,7 @@ const Lifestyle = () => {
             <span> ⏰ </span> Flexible Timings
           </h3>
           <p>
-            Six Sessions (Three morning and 3 evening) available on daily basis
+            Six Sessions (Three morning and three evening) available on daily basis
           </p>
         </div>
         <div className="mental-card">
@@ -33,7 +33,7 @@ const Lifestyle = () => {
             <span> 🧘‍♂️ </span> Stress-Free Lifestyle
           </h3>
           <p>
-            45 min session of Yoga will make your life stressfree and bring
+            yoga session will make your life stressfree and bring
             mental peace.
           </p>
         </div>

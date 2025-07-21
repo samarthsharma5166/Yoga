@@ -44,8 +44,8 @@ export default function DashboardSidebar({ menuItems, open, setOpen }) {
             "& .MuiDrawer-paper": {
               width: drawerWidth,
            
-              marginTop: "84px",
-              height: "calc(100% - 84px)",
+              marginTop: "6.4rem",
+              // height: "calc(100% - 94px)", 
               borderRight: "none",
             },
           }}
