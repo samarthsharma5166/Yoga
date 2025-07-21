@@ -10,7 +10,7 @@ import {
   School as TestIcon,
 } from "@mui/icons-material";
 import "./CSS/adminlayout.css";
-import Drawer from "../components/Drawer";
+// import Drawer from "../components/Drawer";
 import {  Users2Icon } from "lucide-react";
 
 const menuItems = [
@@ -38,10 +38,9 @@ const Adminlayout = () => {
       <Navbarr open={open} setOpen={setOpen} text="" />
 
       <div className="admin-body">
-        {/* <Sidebar menuItems={menuItems} open={open} setOpen={setOpen} /> */}
+        <Sidebar menuItems={menuItems} open={open} setOpen={setOpen} />
         {/* New Drawer */}
         <div className="main-content">
-          <Drawer menuItems={menuItems} />
           <Outlet />
         </div>
       </div>

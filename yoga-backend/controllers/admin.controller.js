@@ -4,6 +4,7 @@ import {
   countClasses,
   countPayments,
   countReferrals,
+  getAllUsersFromDb,
 } from "../model/adminmodel.js";
 
 export const getAdminStats = async (req, res) => {
@@ -33,3 +34,14 @@ export const getAdminStats = async (req, res) => {
     res.status(500).json({ error: "Failed to fetch admin dashboard stats" });
   }
 };
+
+
+export const getAllUsersAdmin = async (req,res) =>{
+  try {
+    const users = await getAllUsersFromDb();
+    res.status(200).json(users);
+  } catch (error) {
+    console.error("❌ Error in getAllUsers:", error.message);
+    res.status(500).json({ message: "Failed to fetch users" });
+  }
+}

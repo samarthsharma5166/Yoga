@@ -27,3 +27,7 @@ export const countReferrals = async () => {
 };
 
 
+export const getAllUsersFromDb = async () => {
+  const [rows] = await db.query("SELECT * FROM users");
+  return rows;
+};

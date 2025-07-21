@@ -62,9 +62,10 @@ export const bookClass = (data) => API.post("/bookings/class", data);
 export const bookDemo = (data) => API.post("/bookings/demo", data);
 
 export const getUserBookingHistory = (userId) => API.get(`/bookings/user/${userId}`);
-
-
 export const getAdminStats = () => API.get("/admin/stats");
+
+// ============= Get All Users =================
+export const getAllUsersFromDb = () => API.get("/admin/users");
 
 // ✅ Export main API instance
 export default API;

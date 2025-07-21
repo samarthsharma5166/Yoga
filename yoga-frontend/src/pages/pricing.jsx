@@ -1,5 +1,18 @@
 import React, { useState, useEffect } from "react";
 
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Paper,
+  Typography,
+  CircularProgress,
+} from "@mui/material";
+
+
 const plans = [
   {
     name: "Bumper Saver Package",
@@ -60,6 +73,8 @@ const packages = [
   },
 ];
 
+
+
 function Pricing() {
   const [invoiceNo] = useState("YS/2026/00001");
   const [date] = useState(new Date().toISOString().split("T")[0]);
@@ -81,7 +96,7 @@ function Pricing() {
   const netAmount = Math.max(plan.price - referralUsed, 0);
 
   return (
-    <div className="max-w-7xl mx-auto p-4 space-y-10">
+    <div className="max-w-7xl mx-auto p-4 space-y-10 mt-28">
       {/* Invoice Card */}
       <div className="bg-white shadow-md p-6 rounded-lg border">
         <h2 className="text-2xl font-bold text-center text-black mb-10">
@@ -157,32 +172,32 @@ function Pricing() {
           />
         </div>
 
-        <table className="w-full border text-sm">
-          <thead className="bg-gray-100">
-            <tr>
-              <th className="p-2 border">Description</th>
-              <th className="p-2 border text-right">Amount (₹)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td className="p-2 border">Subscription – {plan.name}</td>
-              <td className="p-2 border text-right">
+        <Table className="w-full border text-sm">
+          <TableHead className="bg-gray-100">
+            <TableRow>
+              <TableCell className="p-2 border">Description</TableCell>
+              <TableCell className="p-2 border text-right">Amount (₹)</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            <TableRow>
+              <TableCell className="p-2 border">Subscription – {plan.name}</TableCell>
+              <TableCell className="p-2 border text-right">
                 ₹{plan.price.toFixed(2)}
-              </td>
-            </tr>
-            <tr>
-              <td className="p-2 border">Less: Referral Redeemed</td>
-              <td className="p-2 border text-right text-red-500">
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell className="p-2 border">Less: Referral Redeemed</TableCell>
+              <TableCell className="p-2 border text-right text-red-500">
                 -₹{referralUsed.toFixed(2)}
-              </td>
-            </tr>
-            <tr className="bg-yellow-50 font-semibold">
-              <td className="p-2 border">Net Payable</td>
-              <td className="p-2 border text-right">₹{netAmount.toFixed(2)}</td>
-            </tr>
-          </tbody>
-        </table>
+              </TableCell>
+            </TableRow>
+            <TableRow className="bg-yellow-50 font-semibold">
+              <TableCell className="p-2 border">Net Payable</TableCell>
+              <TableCell className="p-2 border text-right">₹{netAmount.toFixed(2)}</TableCell>
+            </TableRow>
+          </TableBody>
+        </Table>
 
         <div className="mt-4 text-sm text-gray-600">
           <p>🔹 Referral discount applied: ₹{referralUsed}</p>
@@ -224,96 +239,96 @@ function Pricing() {
       <div className="bg-white shadow-md p-6 rounded-lg border">
         <h2 className="text-xl font-bold mb-4">Package Pricing (INR)</h2>
         <div className="overflow-x-auto">
-          <table className="w-full border text-sm">
-            <thead className="bg-yellow-300">
-              <tr>
-                <th className="border p-2">Package Type</th>
+          <Table className="w-full border text-sm">
+            <TableHead className="bg-yellow-300">
+              <TableRow>
+                <TableCell className="border p-2">Package Type</TableCell>
                 {packages.map((plan) => (
-                  <th key={plan.type} className="border p-2">
+                  <TableCell key={plan.type} className="border p-2">
                     {plan.type}
-                  </th>
+                  </TableCell>
                 ))}
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td className="border p-2">Period</td>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              <TableRow>
+                <TableCell className="border p-2">Period</TableCell>
                 {packages.map((plan) => (
-                  <td className="border p-2 text-center">{plan.period}</td>
+                  <TableCell key={plan.period} className="border p-2 text-center">{plan.period}</TableCell>
                 ))}
-              </tr>
-              <tr>
-                <td className="border p-2">Original</td>
+              </TableRow>
+              <TableRow>
+                <TableCell className="border p-2">Original</TableCell>
                 {packages.map((plan) => (
-                  <td className="border p-2 text-center">₹{plan.original}</td>
+                  <TableCell key={plan.original} className="border p-2 text-center">₹{plan.original}</TableCell>
                 ))}
-              </tr>
-              <tr>
-                <td className="border p-2">Percent Off</td>
+              </TableRow>
+              <TableRow>
+                <TableCell className="border p-2">Percent Off</TableCell>
                 {packages.map((plan) => (
-                  <td className="border p-2 text-center">{plan.discount}</td>
+                  <TableCell key={plan.discount} className="border p-2 text-center">{plan.discount}</TableCell>
                 ))}
-              </tr>
-              <tr className="bg-yellow-100 font-semibold">
-                <td className="border p-2">Package Offer INR</td>
+              </TableRow>
+              <TableRow className="bg-yellow-100 font-semibold">
+                <TableCell className="border p-2">Package Offer INR</TableCell>
                 {packages.map((plan) => (
-                  <td className="border p-2 text-center">₹{plan.offerINR}</td>
+                  <TableCell key={plan.offerINR} className="border p-2 text-center">₹{plan.offerINR}</TableCell>
                 ))}
-              </tr>
-              <tr>
-                <td className="border p-2">Redeem (75%)</td>
+              </TableRow>
+              <TableRow>
+                <TableCell className="border p-2">Redeem (75%)</TableCell>
                 {packages.map((plan) => (
-                  <td className="border p-2 text-center">₹{plan.redeemINR}</td>
+                  <TableCell className="border p-2 text-center">₹{plan.redeemINR}</TableCell>
                 ))}
-              </tr>
-              <tr>
-                <td className="border p-2">Balance Payable</td>
+              </TableRow>
+              <TableRow>
+                <TableCell className="border p-2">Balance Payable</TableCell>
                 {packages.map((plan) => (
-                  <td className="border p-2 text-center text-red-600 font-medium">
+                  <TableCell key={plan.balanceINR} className="border p-2 text-center text-red-600 font-medium">
                     ₹{plan.balanceINR}
-                  </td>
+                  </TableCell>
                 ))}
-              </tr>
-            </tbody>
-          </table>
+              </TableRow>
+            </TableBody>
+          </Table>
         </div>
 
         <h2 className="text-xl font-bold mt-6 mb-4">Package Pricing (USD)</h2>
         <div className="overflow-x-auto">
-          <table className="w-full border text-sm">
-            <thead className="bg-yellow-300">
-              <tr>
-                <th className="border p-2">Package Type</th>
+          <Table className="w-full border text-sm">
+            <TableHead className="bg-yellow-300">
+              <TableRow>
+                <TableCell className="border p-2">Package Type</TableCell>
                 {packages.map((plan) => (
-                  <th key={plan.type} className="border p-2">
+                  <TableCell key={plan.type} className="border p-2">
                     {plan.type}
-                  </th>
+                  </TableCell>
                 ))}
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td className="border p-2">Offer USD</td>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              <TableRow>
+                <TableCell className="border p-2">Offer USD</TableCell>
                 {packages.map((plan) => (
-                  <td className="border p-2 text-center">${plan.offerUSD}</td>
+                  <TableCell key={plan.offerUSD} className="border p-2 text-center">${plan.offerUSD}</TableCell>
                 ))}
-              </tr>
-              <tr>
-                <td className="border p-2">Redeem (75%)</td>
+              </TableRow>
+              <TableRow>
+                <TableCell className="border p-2">Redeem (75%)</TableCell>
                 {packages.map((plan) => (
-                  <td className="border p-2 text-center">${plan.redeemUSD}</td>
+                  <TableCell key={plan.redeemUSD} className="border p-2 text-center">${plan.redeemUSD}</TableCell>
                 ))}
-              </tr>
-              <tr>
-                <td className="border p-2">Balance Payable</td>
+              </TableRow>
+              <TableRow>
+                <TableCell className="border p-2">Balance Payable</TableCell>
                 {packages.map((plan) => (
-                  <td className="border p-2 text-center text-red-600 font-medium">
+                  <TableCell key={plan.balanceUSD} className="border p-2 text-center text-red-600 font-medium">
                     ${plan.balanceUSD}
-                  </td>
+                  </TableCell>
                 ))}
-              </tr>
-            </tbody>
-          </table>
+              </TableRow>
+            </TableBody>
+          </Table>
         </div>
 
         <div className="mt-4 text-sm text-gray-600">
