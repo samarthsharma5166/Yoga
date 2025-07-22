@@ -171,6 +171,7 @@ body {
 .slider__text-item h3 {
   /* Softer, more inviting light pink tint */
   background-color: rgba(248, 187, 208, 0.9); /* Using --logo-pink-light with higher opacity */
+  background-color: white;
 }
 
 .slider__text-item p {
@@ -196,6 +197,7 @@ body {
 .slider__text-item h3::before {
   /* Vibrant pink for the H3 overlay, keeping it striking */
   background-color: var(--logo-pink-vibrant);
+  background-color: whitesmoke;
 }
 
 .slider__text-item p::before {
@@ -205,8 +207,8 @@ body {
 
 .slider__text-item h3 {
   margin: 0;
-  font-size: 3.5em;
-  padding: 0 .3em;
+  font-size: 2.5em;
+  padding: 0.3em;
   position: relative;
   font-weight: 700;
   transform: translateX(-100%);

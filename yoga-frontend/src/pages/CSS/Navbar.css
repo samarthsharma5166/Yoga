@@ -4,11 +4,11 @@
   top: 0;
   left: 0;
   right: 0;
-  background-color: transparent; /* Make it transparent */
+  background-color: white; /* Make it transparent */
   padding: 10px 20px;
   margin-bottom: 20px;
   z-index: 1000;
-  box-shadow: none; /* Remove shadow if not needed */
+  box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.151); /* Remove shadow if not needed */
   backdrop-filter: blur(10px); /* Optional: blur background for better readability */
   -webkit-backdrop-filter: blur(10px); /* Safari support */
 }

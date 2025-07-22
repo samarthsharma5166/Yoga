@@ -4,7 +4,6 @@ import Navbarr from "../components/Navbar";
 import Sidebar from "../Admin/Dashboardsidebar";
 import LogoutIcon from "@mui/icons-material/Logout";
 
-
 import {
   Dashboard as DashboardIcon,
   Assignment as PlanIcon,
@@ -36,7 +35,7 @@ const Userlayout = () => {
       <div className="user-body">
         <Sidebar menuItems={menuItems} open={open} setOpen={setOpen} />
 
-        <div className="user-main-content">
+        <div className="user-main-content flex items-center justify-center">
           <h1 className="text-2xl ">Comming Soon....</h1>
           {/* <Outlet /> */}
           {location.pathname === "/user/logout" && <Outlet/>}

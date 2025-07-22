@@ -364,7 +364,7 @@ const Slider = () => {
     
     
     <div
-   
+  
       id="slider"
       className="slider"
       ref={sliderRef}

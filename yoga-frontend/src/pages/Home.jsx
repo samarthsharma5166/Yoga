@@ -118,7 +118,7 @@ const HomePage = () => {
       img: ABImage,
       name: "Sanjay Kumar Mahesh",
       title: "Founder & CEO",
-      desc: "An IIT Roorkee graduate with a B.E. in Mechanical Engineering and 38 years of corporate experience, Sanjay Kumar Mahesh is a passionate yoga advocate committed to making quality yoga accessible to all. He believes yoga is more than just fitness—it’s a path to physical vitality, mental clarity, and inner balance. With a vision to bring transformative wellness to every doorstep, he leads India’s top yoga movement, blending tradition with convenience like never before.",
+      desc: "B.E. in Mechanical Engineering from IIT Roorkee with 38 years of distinguished corporate experience. A passionate yoga enthusiast, he is a firm believer in the transformative power of yoga to enhance strength, flexibility, and overall well-being. His vision is rooted in the belief that yoga is not just a form of exercise, but a holistic practice that can help people achieve better physical health, mental clarity, and inner balance. Through this venture, he aspires to make the benefits of yoga accessible to people from all walks of life by making Quality Yoga available at their door-step at the price not seen before.",
     },
   ];
 
@@ -537,7 +537,7 @@ const HomePage = () => {
                 Flexible Timings
               </h3>
               <p className="font-medium">
-                Sessions are available <strong>every single day</strong>, giving
+                Sessions are available <strong>six times a day</strong>, giving
                 you flexibility to practice at your pace.
               </p>
             </div>
@@ -552,7 +552,7 @@ const HomePage = () => {
               <p className="font-medium">
                 Subscribers get access to{" "}
                 <strong>additional wellness programs</strong>, including
-                <strong>nutrition guidance</strong> and more —{" "}
+                <strong> nutrition guidance</strong> and more —{" "}
                 <strong>at no extra cost</strong>.
               </p>
             </div>
@@ -588,7 +588,7 @@ const HomePage = () => {
                 <h1 className="text-white text-3xl text-center font-bold">
                   {trainer.name}
                 </h1>
-                <p className="text-white text-center font-medium text-sm tracking-wide">
+                <p className="text-white  text-center mx-auto w-80 font-medium text-sm tracking-wide">
                   {trainer.about}
                 </p>
               </div>
@@ -682,3 +682,4 @@ const HomePage = () => {
 };
 
 export default HomePage;
+

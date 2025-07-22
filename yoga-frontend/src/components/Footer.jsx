@@ -30,14 +30,13 @@ const Footer = () => {
           <div className="footer-info">
             <p className="footer-info-title">Address:</p>
             <p className="footer-info-text">
-              {footerData.address ||
-                "Bothra Complex, Model Mill Square, Ganeshpeth Colony, Nagpur, Maharashtra 440018"}
+              {footerData.address}
             </p>
           </div>
           <div className="footer-info">
             <p className="footer-info-title">Phone:</p>
             <p className="footer-info-text">
-              {footerData.phone || "07126924545"}
+              {footerData.phone}
             </p>
           </div>
           <div className="footer-social">
@@ -75,7 +74,7 @@ const Footer = () => {
 
       {/* Bottom Bar */}
       <div className="footer-bottom">
-        <p>© {new Date().getFullYear()} Habuild Healthtech Private Limited. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} Healthy Horizons Pvt. Ltd</p>
         <div className="footer-bottom-links">
           <a href="/privacy-policy" className="footer-link">Privacy Policy</a>
           <a href="/returnrefund" className="footer-link">Refund Policy</a>

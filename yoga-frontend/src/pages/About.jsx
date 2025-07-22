@@ -15,24 +15,18 @@ const About = () => {
           Companion for Everyday Yoga!
         </p>
         <div className="about-flex">
-          <div className="image-box">
+          {/* <div className="image-box">
             <img src={founderImg} alt="Founder - Sanjay Kumar Mahesh" />
-          </div>
+          </div> */}
           <div>
-            <h2 className="text-2xl font-semibold mb-2 text-[#424242]">
+            {/* <h2 className="text-2xl font-semibold mb-2 text-[#424242]">
               Founder & CEO - Sanjay Kumar Mahesh
-            </h2>
-            <p className="text-gray-700">
-              B.E. in Mechanical Engineering from IIT Roorkee with 38 years of
-              distinguished corporate experience. A passionate yoga enthusiast,
-              he is a firm believer in the transformative power of yoga to
-              enhance strength, flexibility, and overall well-being. His vision
-              is rooted in the belief that yoga is not just a form of exercise,
-              but a holistic practice that can help people achieve better
-              physical health, mental clarity, and inner balance. Through this
-              venture, he aspires to make the benefits of yoga accessible to
-              people from all walks of life by making Quality Yoga available at
-              their door-step at the price not seen before.
+            </h2> */}
+            <p className="text-gray-700 text-center">
+              At YogSaathi, we believe that Yoga is not just an exercise — it is
+              a way to bring balance, wellness, and peace into everyday life.
+              Our mission is to make authentic Yoga affordable, accessible, and
+              practical for everyone.
             </p>
           </div>
         </div>
@@ -60,6 +54,9 @@ const About = () => {
         </div>
 
         <div className="vision-flex">
+          <div className="image-box">
+            <img src={founderImg} alt="Founder - Sanjay Kumar Mahesh" />
+          </div>
           <div>
             <h3 className="text-[#424242]">Promoted by Experience & Passion</h3>
             <p className="mt-3 text-gray-700">
@@ -70,7 +67,6 @@ const About = () => {
               every corner of society.
             </p>
           </div>
-         
         </div>
 
         <div className="vision-flex">

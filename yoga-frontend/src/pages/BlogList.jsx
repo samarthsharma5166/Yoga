@@ -23,9 +23,14 @@ export default function PublicBlogList() {
   };
 
   return (
-    <div className="blog-list-container min-h-screen">
-      <h2 className="blog-heading">📰 Latest Blogs</h2>
-      <div className="blog-grid">
+    <div className="blog-list-container min-h-screen flex flex-col items-center">
+      {/* <h2 className="blog-heading mt-10">📰 Latest Blogs</h2> */}
+      <h2 className="mt-10 text-3xl font-bold">🧘‍♀️ Blog Coming Soon</h2>
+      <p className="text-lg font-light text-gray-700">
+        We're preparing something mindful for your soul. Stay tuned for
+        inspiring content, wellness tips, and more!
+      </p>
+      {/* <div className="blog-grid">
         {blogs.map((blog, index) => (
           <div
             className="blog-card animated fadeInUp"
@@ -54,7 +59,7 @@ export default function PublicBlogList() {
             </div>
           </div>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 }
