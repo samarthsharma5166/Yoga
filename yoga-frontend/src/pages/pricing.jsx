@@ -12,7 +12,6 @@ import {
   CircularProgress,
 } from "@mui/material";
 
-
 const plans = [
   {
     name: "Bumper Saver Package",
@@ -73,8 +72,6 @@ const packages = [
   },
 ];
 
-
-
 function Pricing() {
   const [invoiceNo] = useState("YS/2026/00001");
   const [date] = useState(new Date().toISOString().split("T")[0]);
@@ -97,8 +94,11 @@ function Pricing() {
 
   return (
     <div className="max-w-7xl mx-auto p-4 space-y-10 mt-28">
+      <h2 className="text-2xl font-bold text-center text-black mb-10">
+        🧾 Invoices Sheet
+      </h2>
       {/* Invoice Card */}
-      <div className="bg-white shadow-md p-6 rounded-lg border">
+      {/* <div className="bg-white shadow-md p-6 rounded-lg border">
         <h2 className="text-2xl font-bold text-center text-black mb-10">
           🧾 Invoices Sheet
         </h2>
@@ -208,32 +208,9 @@ function Pricing() {
             🙏 Thank you for subscribing to <strong>Yog Saathi</strong>!
           </p>
         </div>
-      </div>
+      </div> */}
 
       {/* Terms Note */}
-      <div className="bg-white p-4 rounded-lg shadow-sm text-sm border">
-        <p className="mb-2">
-          <strong>Back updation while creating invoice</strong> – Referral
-          Account Updation after redeeming
-        </p>
-        <p className="mb-2">
-          <strong>Every Referral on Joining</strong> – 75 Points or Rs. 75/- on
-          joining the free trial
-        </p>
-        <p className="mb-2">
-          <strong>Max Points which can be retained in Account – 5000</strong>{" "}
-          (Redeem before it)if it exceeds the prescribed limit, the points in
-          excess of prescribed limit (5000 Points) shall expire. Therefore, it
-          is advisable to redeem the maximum points at the time renewal of
-          subscription. The points are non-transferrable.{" "}
-        </p>
-        <p>
-          <strong>
-            Maximum 75% of full subscription amount can be redeemed
-          </strong>
-          , balance 25% need to be paid.
-        </p>
-      </div>
 
       {/* Pricing Table INR & USD */}
       <div className="bg-white shadow-md p-6 rounded-lg border">
@@ -242,9 +219,18 @@ function Pricing() {
           <Table className="w-full border text-sm">
             <TableHead className="bg-yellow-300">
               <TableRow>
-                <TableCell className="border p-2">Package Type</TableCell>
+                <TableCell
+                  sx={{ fontWeight: "bold", fontSize: "20px" }}
+                  className="border p-2  "
+                >
+                  Package Type
+                </TableCell>
                 {packages.map((plan) => (
-                  <TableCell key={plan.type} className="border p-2">
+                  <TableCell
+                    sx={{ fontWeight: "bold", fontSize: "20px" }}
+                    key={plan.type}
+                    className="border p-2"
+                  >
                     {plan.type}
                   </TableCell>
                 ))}
@@ -252,43 +238,86 @@ function Pricing() {
             </TableHead>
             <TableBody>
               <TableRow>
-                <TableCell className="border p-2">Period</TableCell>
+                <TableCell
+                  sx={{ fontWeight: "bold", fontSize: "20px" }}
+                  className="border p-2"
+                >
+                  Period
+                </TableCell>
                 {packages.map((plan) => (
-                  <TableCell key={plan.period} className="border p-2 text-center">{plan.period}</TableCell>
+                  <TableCell
+                    key={plan.period}
+                    className="border p-2 text-center"
+                  >
+                    {plan.period}
+                  </TableCell>
                 ))}
               </TableRow>
               <TableRow>
-                <TableCell className="border p-2">Original</TableCell>
+                <TableCell
+                  sx={{ fontWeight: "bold", fontSize: "20px" }}
+                  className="border p-2  "
+                >
+                  Original
+                </TableCell>
                 {packages.map((plan) => (
-                  <TableCell key={plan.original} className="border p-2 text-center">₹{plan.original}</TableCell>
+                  <TableCell
+                    sx={{ fontSize: "20px" }}
+                    key={plan.original}
+                    className="border p-2 text-center"
+                  >
+                    ₹{plan.original}
+                  </TableCell>
                 ))}
               </TableRow>
               <TableRow>
-                <TableCell className="border p-2">Percent Off</TableCell>
+                <TableCell
+                  sx={{ fontWeight: "bold", fontSize: "20px" }}
+                  className="border p-2"
+                >
+                  Percent Off
+                </TableCell>
                 {packages.map((plan) => (
-                  <TableCell key={plan.discount} className="border p-2 text-center">{plan.discount}</TableCell>
+                  <TableCell
+                    sx={{ fontSize: "20px" }}
+                    key={plan.discount}
+                    className="border p-2 text-center"
+                  >
+                    {plan.discount}
+                  </TableCell>
                 ))}
               </TableRow>
               <TableRow className="bg-yellow-100 font-semibold">
-                <TableCell className="border p-2">Package Offer INR</TableCell>
+                <TableCell
+                  sx={{ fontWeight: "bold", fontSize: "20px" }}
+                  className="border p-2"
+                >
+                  Package Offer INR
+                </TableCell>
                 {packages.map((plan) => (
-                  <TableCell key={plan.offerINR} className="border p-2 text-center">₹{plan.offerINR}</TableCell>
+                  <TableCell
+                    sx={{ fontSize: "20px" }}
+                    key={plan.offerINR}
+                    className="border p-2 text-center"
+                  >
+                    ₹{plan.offerINR}
+                  </TableCell>
                 ))}
               </TableRow>
-              <TableRow>
-                <TableCell className="border p-2">Redeem (75%)</TableCell>
+              {/* <TableRow>
+                <TableCell  sx={{fontWeight:'bold'}} className="border p-2">Redeem (75%)</TableCell>
                 {packages.map((plan) => (
                   <TableCell className="border p-2 text-center">₹{plan.redeemINR}</TableCell>
                 ))}
-              </TableRow>
-              <TableRow>
-                <TableCell className="border p-2">Balance Payable</TableCell>
+              </TableRow> */}
+              {/* <TableRow>
+                <TableCell  sx={{fontWeight:'bold'}} className="border p-2">Balance Payable</TableCell>
                 {packages.map((plan) => (
                   <TableCell key={plan.balanceINR} className="border p-2 text-center text-red-600 font-medium">
                     ₹{plan.balanceINR}
                   </TableCell>
                 ))}
-              </TableRow>
+              </TableRow> */}
             </TableBody>
           </Table>
         </div>
@@ -298,9 +327,18 @@ function Pricing() {
           <Table className="w-full border text-sm">
             <TableHead className="bg-yellow-300">
               <TableRow>
-                <TableCell className="border p-2">Package Type</TableCell>
+                <TableCell
+                  sx={{ fontWeight: "bold", fontSize: "20px" }}
+                  className="  border p-2"
+                >
+                  Package Type
+                </TableCell>
                 {packages.map((plan) => (
-                  <TableCell key={plan.type} className="border p-2">
+                  <TableCell
+                    sx={{ fontWeight: "bold", fontSize: "20px" }}
+                    key={plan.type}
+                    className="border p-2"
+                  >
                     {plan.type}
                   </TableCell>
                 ))}
@@ -308,25 +346,68 @@ function Pricing() {
             </TableHead>
             <TableBody>
               <TableRow>
-                <TableCell className="border p-2">Offer USD</TableCell>
+                <TableCell
+                  sx={{ fontWeight: "bold", fontSize: "20px" }}
+                  className="border p-2"
+                >
+                  Period
+                </TableCell>
                 {packages.map((plan) => (
-                  <TableCell key={plan.offerUSD} className="border p-2 text-center">${plan.offerUSD}</TableCell>
+                  <TableCell
+                    key={plan.period}
+                    className="border p-2 text-center"
+                  >
+                    {plan.period}
+                  </TableCell>
                 ))}
               </TableRow>
               <TableRow>
-                <TableCell className="border p-2">Redeem (75%)</TableCell>
+                <TableCell
+                  sx={{ fontWeight: "bold", fontSize: "20px" }}
+                  className="border p-2  "
+                >
+                  Original
+                </TableCell>
+                {packages.map((plan) => (
+                  <TableCell
+                    key={plan.original}
+                    className="border p-2 text-center"
+                  >
+                    ₹{plan.original}
+                  </TableCell>
+                ))}
+              </TableRow>
+              <TableRow>
+                <TableCell
+                  sx={{ fontWeight: "bold", fontSize: "20px" }}
+                  className="border p-2"
+                >
+                  Offer USD
+                </TableCell>
+                {packages.map((plan) => (
+                  <TableCell
+                    key={plan.offerUSD}
+                    className="border p-2 text-center"
+                  >
+                    ${plan.offerUSD}
+                  </TableCell>
+                ))}
+              </TableRow>
+
+              {/* <TableRow>
+                <TableCell  sx={{fontWeight:'bold'}} className="border p-2">Redeem (75%)</TableCell>
                 {packages.map((plan) => (
                   <TableCell key={plan.redeemUSD} className="border p-2 text-center">${plan.redeemUSD}</TableCell>
                 ))}
-              </TableRow>
-              <TableRow>
-                <TableCell className="border p-2">Balance Payable</TableCell>
+              </TableRow> */}
+              {/* <TableRow>
+                <TableCell  sx={{fontWeight:'bold'}} className="border p-2">Balance Payable</TableCell>
                 {packages.map((plan) => (
                   <TableCell key={plan.balanceUSD} className="border p-2 text-center text-red-600 font-medium">
                     ${plan.balanceUSD}
                   </TableCell>
                 ))}
-              </TableRow>
+              </TableRow> */}
             </TableBody>
           </Table>
         </div>
